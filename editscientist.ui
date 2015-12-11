@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddStudent</class>
- <widget class="QDialog" name="AddStudent">
+ <class>EditScientist</class>
+ <widget class="QDialog" name="EditScientist">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>295</height>
+    <width>504</width>
+    <height>261</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
-  </property>
-  <property name="sizeGripEnabled">
-   <bool>false</bool>
-  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>260</y>
+     <x>150</x>
+     <y>220</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -39,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>100</y>
+     <y>110</y>
      <width>104</width>
      <height>26</height>
     </rect>
@@ -64,7 +58,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>70</y>
+     <y>80</y>
      <width>59</width>
      <height>16</height>
     </rect>
@@ -73,25 +67,25 @@
     <string>Name:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>105</y>
-     <width>59</width>
+     <x>230</x>
+     <y>150</y>
+     <width>241</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Gender:</string>
+    <string>(Optional) Skip if scientist is still alive.</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>70</y>
-     <width>271</width>
+     <x>110</x>
+     <y>150</y>
+     <width>113</width>
      <height>21</height>
     </rect>
    </property>
@@ -100,7 +94,7 @@
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>110</y>
+     <y>120</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -109,11 +103,24 @@
     <string>Year of birth:</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>115</y>
+     <width>59</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Gender:</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
+     <y>20</y>
      <width>201</width>
      <height>51</height>
     </rect>
@@ -125,27 +132,17 @@
     <enum>QFrame::Sunken</enum>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600; color:#ff56d6;&quot;&gt;Add new scientist&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600; color:#ff56d6;&quot;&gt;Edit scientist&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::RichText</enum>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>110</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>150</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -154,27 +151,24 @@
     <string>Year of death: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>140</y>
-     <width>113</width>
+     <x>80</x>
+     <y>80</y>
+     <width>271</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>140</y>
-     <width>241</width>
+     <x>370</x>
+     <y>120</y>
+     <width>113</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="text">
-    <string>(Optional) Skip if scientist is still alive.</string>
    </property>
   </widget>
  </widget>
@@ -183,7 +177,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>AddStudent</receiver>
+   <receiver>EditScientist</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -199,7 +193,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>AddStudent</receiver>
+   <receiver>EditScientist</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -1,5 +1,5 @@
 #include "addscientist.h"
-#include "ui_addscientis.h"
+#include "ui_addstudent.h"
 
 AddScientist::AddScientist(QWidget *parent) :
     QDialog(parent),

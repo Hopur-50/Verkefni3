@@ -43,6 +43,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_3">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -50,6 +53,12 @@
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -121,19 +130,6 @@
    </property>
    <property name="text">
     <string>Type:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>170</y>
-     <width>241</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_4">
