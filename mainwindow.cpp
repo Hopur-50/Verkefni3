@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    //displayAllComputers();
+    //displayAllScientists();
 
 }
 
@@ -53,7 +54,7 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
 
 void MainWindow::displayAllComputers()
 {
-    //qDebug() << ui->computerRepo.getAllComputers(currentOrder)->text();
+    displayComputers(compServ.getAllComputers());
 }
 
 void MainWindow::displayComputers(std::vector<Computer> comp)
