@@ -22,12 +22,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::getAllScientists()
+void MainWindow::displayAllScientists()
 {
     //qDebug() << ui-> ScientistsView ->text();
 }
 
-void MainWindow::getAllComputers()
+void MainWindow::displayAllComputers()
 {
     //qDebug() << ui->computerRepo.getAllComputers(currentOrder)->text();
 }

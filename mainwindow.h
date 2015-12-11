@@ -31,9 +31,9 @@ private slots:
 
     void on_addRelationsButton_clicked();
 
-    void getAllScientists();
+    void displayAllScientists();
 
-    void getAllComputers();
+    void displayAllComputers();
 
 private:
     Ui::MainWindow *ui;
