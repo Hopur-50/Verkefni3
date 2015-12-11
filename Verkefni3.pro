@@ -22,11 +22,11 @@ SOURCES += main.cpp\
     services/computerservice.cpp \
     services/scientistservice.cpp \
     utilities/utils.cpp \
-    addcomputer.cpp \
-    editscientist.cpp \
-    editcomputer.cpp \
-    addscientist.cpp \
-    repositories/baserepository.cpp
+    repositories/baserepository.cpp \
+    interface/addcomputer.cpp \
+    interface/addscientist.cpp \
+    interface/editcomputer.cpp \
+    interface/editscientist.cpp
 
 HEADERS  += mainwindow.h \
     models/computer.h \
@@ -37,11 +37,11 @@ HEADERS  += mainwindow.h \
     services/scientistservice.h \
     utilities/constants.h \
     utilities/utils.h \
-    editscientist.h \
-    addscientist.h \
-    editcomputer.h \
-    addcomputer.h \
-    repositories/baserepository.h
+    repositories/baserepository.h \
+    interface/addcomputer.h \
+    interface/addscientist.h \
+    interface/editcomputer.h \
+    interface/editscientist.h
 
 FORMS    += mainwindow.ui \
     editscientist.ui \
