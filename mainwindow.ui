@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>826</width>
-    <height>607</height>
+    <width>982</width>
+    <height>644</height>
    </rect>
   </property>
   <property name="palette">
@@ -432,7 +432,7 @@
    <widget class="QPushButton" name="deleteComputerButton">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>700</x>
       <y>470</y>
       <width>81</width>
       <height>26</height>
@@ -445,7 +445,7 @@
    <widget class="QPushButton" name="addNewComputerButton">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>700</x>
       <y>410</y>
       <width>81</width>
       <height>26</height>
@@ -471,7 +471,7 @@
    <widget class="QPushButton" name="editComputerButton">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>700</x>
       <y>440</y>
       <width>81</width>
       <height>26</height>
@@ -510,8 +510,8 @@
    <widget class="QPushButton" name="addRelationsButton">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>400</y>
+      <x>420</x>
+      <y>410</y>
       <width>111</width>
       <height>26</height>
      </rect>
@@ -533,7 +533,7 @@
    <widget class="QTextEdit" name="textEdit_2">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>520</x>
       <y>20</y>
       <width>291</width>
       <height>31</height>
@@ -545,20 +545,129 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>291</width>
-      <height>331</height>
+      <width>451</width>
+      <height>341</height>
      </rect>
     </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>100</number>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>40</number>
+    </attribute>
+    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderStretchLastSection">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>40</number>
+    </attribute>
+    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderStretchLastSection">
+     <bool>true</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Gender</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Year born</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Year died</string>
+     </property>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tableComputer">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>520</x>
       <y>60</y>
-      <width>291</width>
-      <height>331</height>
+      <width>371</width>
+      <height>341</height>
      </rect>
     </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderStretchLastSection">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>40</number>
+    </attribute>
+    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderStretchLastSection">
+     <bool>true</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Type</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Year built</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -566,7 +675,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>826</width>
+     <width>982</width>
      <height>25</height>
     </rect>
    </property>
