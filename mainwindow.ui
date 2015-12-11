@@ -439,7 +439,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="deleteScientist_2">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -452,7 +452,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="AddNewComputer">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -475,7 +475,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="deleteScientist">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -488,7 +488,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="editComputer">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -501,7 +501,7 @@
      <string>Edit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="AddNewScientist">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -514,7 +514,7 @@
      <string>Add new</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="editScientist">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -573,7 +573,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="addRelations">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -619,6 +619,19 @@
      <string>    Search</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>20</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>    Search</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -626,7 +639,7 @@
      <x>0</x>
      <y>0</y>
      <width>826</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
