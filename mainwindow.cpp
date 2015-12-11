@@ -14,9 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    displayAllComputers();
     displayAllScientists();
-
+    displayAllComputers();
 }
 
 MainWindow::~MainWindow()
@@ -34,6 +33,11 @@ void MainWindow::displayScientists(vector<Scientist> sci)
 
     ui->tableScientist->clear();
     ui->tableScientist->setRowCount(sci.size());
+
+    ui->tableScientist->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
+    ui->tableScientist->setHorizontalHeaderItem(1, new QTableWidgetItem("Gender"));
+    ui->tableScientist->setHorizontalHeaderItem(2, new QTableWidgetItem("Year born"));
+    ui->tableScientist->setHorizontalHeaderItem(3, new QTableWidgetItem("Year died"));
 
     for (unsigned int row = 0; row < sci.size(); row++)
     {
@@ -62,6 +66,10 @@ void MainWindow::displayComputers(vector<Computer> comp)
 {
     ui->tableComputer->clear();
     ui->tableComputer->setRowCount(comp.size());
+
+    ui->tableComputer->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
+    ui->tableComputer->setHorizontalHeaderItem(1, new QTableWidgetItem("Type"));
+    ui->tableComputer->setHorizontalHeaderItem(2, new QTableWidgetItem("Year built"));
 
     for (unsigned int row = 0; row < comp.size(); row++)
     {

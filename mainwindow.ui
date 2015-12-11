@@ -678,11 +678,6 @@
       <string>Year built</string>
      </property>
     </column>
-    <column>
-     <property name="text">
-      <string/>
-     </property>
-    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -691,7 +686,7 @@
      <x>0</x>
      <y>0</y>
      <width>1233</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
