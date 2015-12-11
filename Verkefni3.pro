@@ -45,4 +45,10 @@ FORMS    += mainwindow.ui \
     addstudent.ui \
     addcomputer.ui \
     editscientist.ui \
-    editcomputer.ui
+    editcomputer.ui \
+    addscientist.h \
+    addcomputer.h
+
+FORMS    += mainwindow.ui \
+    addscientist.ui \
+    addcomputer.ui
