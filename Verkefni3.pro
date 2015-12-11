@@ -22,7 +22,7 @@ SOURCES += main.cpp\
     services/computerservice.cpp \
     services/scientistservice.cpp \
     utilities/utils.cpp \
-    addstudent.cpp \
+    addscientist.cpp \
     addcomputer.cpp
 
 HEADERS  += mainwindow.h \
