@@ -37,9 +37,11 @@ private slots:
 
     void displayAllScientists();
 
-    void displayScientists(std::vector sci);
+    void displayScientists(std::vector<Scientist> sci);
 
     void displayAllComputers();
+
+    void displayComputers(std::vector<Computer> comp);
 
 private:
     Ui::MainWindow *ui;
