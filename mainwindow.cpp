@@ -3,6 +3,8 @@
 #include <string>
 #include <QDebug>
 #include <QMainWindow>
+#include "services/computerservice.h"
+#include "services/scientistservice.h"
 
 using namespace std;
 
@@ -11,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
 
 }
@@ -76,6 +79,7 @@ void MainWindow::displayComputers(std::vector<Computer> comp)
 
 void MainWindow::on_addNewScientistButton_clicked()
 {
+
 
 }
 
