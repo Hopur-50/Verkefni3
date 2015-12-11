@@ -9,3 +9,8 @@ BaseRepository::BaseRepository()
     db.open();
 }
 
+BaseRepository::~BaseRepository()
+{
+    db.close();
+}
+

@@ -29,9 +29,9 @@ void MainWindow::displayAllScientists()
     displayScientists(sciServ.getAllScientists());
 }
 
-void MainWindow::displayScientists(std::vector<Scientist> sci)
+void MainWindow::displayScientists(vector<Scientist> sci)
 {
-    //qDebug() << QString::fromStdString(sci.at(0).getName());
+
     ui->tableScientist->clear();
     ui->tableScientist->setRowCount(sci.size());
 
@@ -58,7 +58,7 @@ void MainWindow::displayAllComputers()
     displayComputers(compServ.getAllComputers());
 }
 
-void MainWindow::displayComputers(std::vector<Computer> comp)
+void MainWindow::displayComputers(vector<Computer> comp)
 {
     ui->tableComputer->clear();
     ui->tableComputer->setRowCount(comp.size());

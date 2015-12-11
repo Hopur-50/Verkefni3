@@ -13,6 +13,7 @@ class BaseRepository
 {
 public:
     BaseRepository();
+    ~BaseRepository();
 
 private:
     QSqlDatabase db;
