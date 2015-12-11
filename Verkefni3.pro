@@ -22,10 +22,10 @@ SOURCES += main.cpp\
     services/computerservice.cpp \
     services/scientistservice.cpp \
     utilities/utils.cpp \
-    addscientist.cpp \
     addcomputer.cpp \
     editscientist.cpp \
-    editcomputer.cpp
+    editcomputer.cpp \
+    addscientist.cpp
 
 HEADERS  += mainwindow.h \
     models/computer.h \
@@ -42,13 +42,12 @@ HEADERS  += mainwindow.h \
     editcomputer.h
 
 FORMS    += mainwindow.ui \
-    addstudent.ui \
     addcomputer.ui \
     editscientist.ui \
     editcomputer.ui \
     addscientist.h \
-    addcomputer.h
+    addcomputer.h \
+    addscientist.ui
 
 FORMS    += mainwindow.ui \
-    addscientist.ui \
     addcomputer.ui
