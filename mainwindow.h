@@ -17,23 +17,23 @@ public:
 
 private slots:
 
-    void on_AddNewScientist_clicked();
+    void on_addNewScientistButton_clicked();
 
-    void on_AddNewComputer_clicked();
+    void on_addNewComputerButton_clicked();
 
-    void on_editScientist_clicked();
+    void on_editScientistButton_clicked();
 
-    void on_editComputer_clicked();
+    void on_editComputerButton_clicked();
 
-    void on_deleteScientist_clicked();
+    void on_deleteScientistButton_clicked();
 
-    void on_deleteComputer_clicked();
+    void on_deleteComputerButton_clicked();
 
-    void on_addRelations_clicked();
+    void on_addRelationsButton_clicked();
 
-    void on_GetAllScientists_clicked();
+    void getAllScientists();
 
-    void on_GetAllComputers_clicked();
+    void getAllComputers();
 
 private:
     Ui::MainWindow *ui;

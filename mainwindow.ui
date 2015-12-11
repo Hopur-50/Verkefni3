@@ -429,17 +429,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QColumnView" name="columnView">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>291</width>
-      <height>321</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="deleteScientist_2">
+   <widget class="QPushButton" name="deleteComputerButton">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -452,7 +442,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AddNewComputer">
+   <widget class="QPushButton" name="addNewComputerButton">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -465,17 +455,7 @@
      <string>Add new</string>
     </property>
    </widget>
-   <widget class="QColumnView" name="columnView_2">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>70</y>
-      <width>291</width>
-      <height>321</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="deleteScientist">
+   <widget class="QPushButton" name="deleteScientistButton">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -488,7 +468,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="editComputer">
+   <widget class="QPushButton" name="editComputerButton">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -501,7 +481,7 @@
      <string>Edit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AddNewScientist">
+   <widget class="QPushButton" name="addNewScientistButton">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -514,7 +494,7 @@
      <string>Add new</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="editScientist">
+   <widget class="QPushButton" name="editScientistButton">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -527,53 +507,7 @@
      <string>Edit</string>
     </property>
    </widget>
-   <widget class="QScrollArea" name="scrollArea">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>70</y>
-      <width>21</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="widgetResizable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>19</width>
-       <height>319</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QScrollArea" name="scrollArea_2">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>70</y>
-      <width>21</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="widgetResizable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>19</width>
-       <height>319</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QPushButton" name="addRelations">
+   <widget class="QPushButton" name="addRelationsButton">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -606,30 +540,24 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QTableWidget" name="tableScientist">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>20</y>
-      <width>81</width>
-      <height>31</height>
+      <x>20</x>
+      <y>60</y>
+      <width>291</width>
+      <height>331</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>    Search</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QTableWidget" name="tableComputer">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>20</y>
-      <width>81</width>
-      <height>31</height>
+      <x>370</x>
+      <y>60</y>
+      <width>291</width>
+      <height>331</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>    Search</string>
     </property>
    </widget>
   </widget>

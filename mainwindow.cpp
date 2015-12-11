@@ -22,47 +22,47 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_GetAllScientists_clicked()
+void MainWindow::getAllScientists()
 {
     //qDebug() << ui-> ScientistsView ->text();
 }
 
-void MainWindow::on_GetAllComputers_clicked()
+void MainWindow::getAllComputers()
 {
     //qDebug() << ui->computerRepo.getAllComputers(currentOrder)->text();
 }
 
-void MainWindow::on_AddNewScientist_clicked()
+void MainWindow::on_addNewScientistButton_clicked()
 {
 
 }
 
-void MainWindow::on_AddNewComputer_clicked()
+void MainWindow::on_addNewComputerButton_clicked()
 {
 
 }
 
-void MainWindow::on_editScientist_clicked()
+void MainWindow::on_editScientistButton_clicked()
 {
 
 }
 
-void MainWindow::on_editComputer_clicked()
+void MainWindow::on_editComputerButton_clicked()
 {
 
 }
 
-void MainWindow::on_deleteScientist_clicked()
+void MainWindow::on_deleteScientistButton_clicked()
 {
 
 }
 
-void MainWindow::on_deleteComputer_clicked()
+void MainWindow::on_deleteComputerButton_clicked()
 {
 
 }
 
-void MainWindow::on_addRelations_clicked()
+void MainWindow::on_addRelationsButton_clicked()
 {
 
 }
