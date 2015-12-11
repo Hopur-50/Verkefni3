@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     addcomputer.cpp \
     editscientist.cpp \
     editcomputer.cpp \
-    addscientist.cpp
+    addscientist.cpp \
+    repositories/baserepository.cpp
 
 HEADERS  += mainwindow.h \
     models/computer.h \
@@ -39,7 +40,8 @@ HEADERS  += mainwindow.h \
     editscientist.h \
     addscientist.h \
     editcomputer.h \
-    addcomputer.h
+    addcomputer.h \
+    repositories/baserepository.h
 
 FORMS    += mainwindow.ui \
     editscientist.ui \

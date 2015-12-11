@@ -22,8 +22,7 @@ public:
     bool addRelation(Scientist scientist, Computer computer);
 
 private:
-    std::string fileName;
-    QSqlDatabase db;
+
 };
 
 #endif // COMPUTERREPOSITORY_H

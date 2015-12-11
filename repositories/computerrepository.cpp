@@ -8,16 +8,12 @@
 
 ComputerRepository::ComputerRepository()
 {
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbName = "secondDatabase.sqlite";
-    db.setDatabaseName(dbName);
 
-    db.open();
 }
 
 ComputerRepository::~ComputerRepository()
 {
-    db.close();
+
 }
 
 bool ComputerRepository::addComputer(Computer computer)

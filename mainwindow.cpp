@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //displayAllComputers();
-    //displayAllScientists();
+    displayAllComputers();
+    displayAllScientists();
 
 }
 
@@ -31,6 +31,7 @@ void MainWindow::displayAllScientists()
 
 void MainWindow::displayScientists(std::vector<Scientist> sci)
 {
+    //qDebug() << QString::fromStdString(sci.at(0).getName());
     ui->tableScientist->clear();
     ui->tableScientist->setRowCount(sci.size());
 
