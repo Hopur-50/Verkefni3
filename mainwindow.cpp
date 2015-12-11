@@ -89,23 +89,26 @@ void MainWindow::displayComputers(vector<Computer> comp)
 
 void MainWindow::on_addNewScientistButton_clicked()
 {
-
-
+    AddScientist addSci;
+    addSci.exec();
 }
 
 void MainWindow::on_addNewComputerButton_clicked()
 {
-
+    AddComputer addComp;
+    addComp.exec();
 }
 
 void MainWindow::on_editScientistButton_clicked()
 {
-
+    EditScientist editSci;
+    editSci.exec();
 }
 
 void MainWindow::on_editComputerButton_clicked()
 {
-
+    EditComputer editComp;
+    editComp.exec();
 }
 
 void MainWindow::on_deleteScientistButton_clicked()

@@ -7,6 +7,10 @@
 #include <services/baseservice.h>
 #include <utilities/utils.h>
 #include <utilities/constants.h>
+#include <interface/addscientist.h>
+#include <interface/addcomputer.h>
+#include <interface/editscientist.h>
+#include <interface/editcomputer.h>
 
 namespace Ui {
 class MainWindow;
