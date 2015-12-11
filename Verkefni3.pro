@@ -34,9 +34,9 @@ HEADERS  += mainwindow.h \
     services/scientistservice.h \
     utilities/constants.h \
     utilities/utils.h \
-    addstudent.h \
+    addscientist.h \
     addcomputer.h
 
 FORMS    += mainwindow.ui \
-    addstudent.ui \
+    addscientist.ui \
     addcomputer.ui
