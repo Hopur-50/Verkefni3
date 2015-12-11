@@ -40,10 +40,10 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
         QString yearDied = QString::number(currentSci.getYearDied());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
-        ui->tableScientist->setItem(row, 0, QTableWidgetItem(name));
-        ui->tableScientist->setItem(row, 1, QTableWidgetItem(gender));
-        ui->tableScientist->setItem(row, 2, QTableWidgetItem(yearBorn));
-        ui->tableScientist->setItem(row, 3, QTableWidgetItem(yearDied));
+        ui->tableScientist->setItem(row, 0, new QTableWidgetItem(name));
+        ui->tableScientist->setItem(row, 1, new QTableWidgetItem(gender));
+        ui->tableScientist->setItem(row, 2, new QTableWidgetItem(yearBorn));
+        ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
     }
 
 }
@@ -67,9 +67,9 @@ void MainWindow::displayComputers(std::vector<Computer> comp)
         QString yearBuilt = QString::number(currentComp.getYearOfConstruction());
         if (yearBuilt == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearBuilt = "not built";
 
-        ui->tableComputer->setItem(row, 0, QTableWidgetItem(name));
-        ui->tableComputer->setItem(row, 1, QTableWidgetItem(type));
-        ui->tableComputer->setItem(row, 2, QTableWidgetItem(yearBuilt));
+        ui->tableComputer->setItem(row, 0, new QTableWidgetItem(name));
+        ui->tableComputer->setItem(row, 1, new QTableWidgetItem(type));
+        ui->tableComputer->setItem(row, 2, new QTableWidgetItem(yearBuilt));
     }
 
 }
