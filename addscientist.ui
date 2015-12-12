@@ -23,7 +23,7 @@
       <enum>QFrame::Sunken</enum>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#ff32f1;&quot;&gt;Add new scientist&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#000000;&quot;&gt;Add new scientist&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>
@@ -79,12 +79,16 @@
    <item>
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Year of death:   (Optional) Skip if scientist is still alive.</string>
+      <string>Year of death:   (Optional)</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineYearOfDeath"/>
+    <widget class="QLineEdit" name="lineYearOfDeath">
+     <property name="placeholderText">
+      <string>Skip if scientist is still alive</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonOkCancel">
