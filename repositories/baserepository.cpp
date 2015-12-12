@@ -11,12 +11,12 @@ BaseRepository::BaseRepository()
 
     if (!db.open())
         {
-            qDebug() << "badshit";
+            qDebug() << "Could not connect.";
         }
 
         else
         {
-            qDebug() << "goodshit";
+            qDebug() << "Connection established.";
         }
 }
 

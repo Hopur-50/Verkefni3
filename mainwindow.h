@@ -5,8 +5,10 @@
 #include <services/scientistservice.h>
 #include <services/computerservice.h>
 #include <services/baseservice.h>
+
 #include <utilities/utils.h>
 #include <utilities/constants.h>
+
 #include <interface/addscientist.h>
 #include <interface/addcomputer.h>
 #include <interface/editscientist.h>

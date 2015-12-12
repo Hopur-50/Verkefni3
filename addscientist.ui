@@ -38,7 +38,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="lineScientistName"/>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
@@ -48,7 +48,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="comboGender">
      <item>
       <property name="text">
        <string>Other</string>
@@ -74,7 +74,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_2"/>
+    <widget class="QLineEdit" name="lineYearOfBirth"/>
    </item>
    <item>
     <widget class="QLabel" name="label_5">
@@ -84,10 +84,10 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_3"/>
+    <widget class="QLineEdit" name="lineYearOfDeath"/>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
+    <widget class="QDialogButtonBox" name="buttonOkCancel">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -101,7 +101,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>accepted()</signal>
    <receiver>AddScientist</receiver>
    <slot>accept()</slot>
@@ -117,7 +117,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>rejected()</signal>
    <receiver>AddScientist</receiver>
    <slot>reject()</slot>
