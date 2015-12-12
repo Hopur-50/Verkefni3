@@ -12,3 +12,20 @@ AddComputer::~AddComputer()
 {
     delete ui;
 }
+
+void AddComputer::on_buttonOkCancel_accepted()
+{
+    std::string name = ui->lineComputerName->text().toStdString();
+    std::string type = ui->lineType->text().toStdString();
+    std::string built = ui->comboWasItBuilt->currentText().toStdString();
+
+    if (built == "No")
+    {
+        compServ.addComputer(Computer(name, type, false));
+    }
+    else
+    {
+        int yearConstructed = ui->lineYearOfConstruction->text().toInt();
+        compServ.addComputer(Computer(name, type, true, yearConstructed));
+    }
+}
