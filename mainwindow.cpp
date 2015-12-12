@@ -91,6 +91,7 @@ void MainWindow::on_addNewScientistButton_clicked()
 {
     AddScientist addSci;
     addSci.exec();
+    displayAllScientists();
 }
 
 void MainWindow::on_addNewComputerButton_clicked()
@@ -146,11 +147,11 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
     int currentRow = index.row();
     std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
-    sexType gender = utils::stringToSex(ui->tableScientist->item(currentRow, 1)->text().toStdString());
-    int yearBorn = ui->tableScientist->item(currentRow, 2)->text().toInt();
-
-    Scientist sci = Scientist(name, gender, yearBorn);
-
-    std::vector<Computer> computers = sciServ.getRelatedComputers(sci);
+    std::vector<Computer> computers = sciServ.getRelatedComputers(name);
     displayComputers(computers);
+}
+
+void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
+{
+
 }

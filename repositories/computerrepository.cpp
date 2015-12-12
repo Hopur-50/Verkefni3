@@ -105,12 +105,12 @@ std::vector<Computer> ComputerRepository::searchForComputers(std::string searchT
     return foundComputers;
 }
 
-std::vector<Scientist> ComputerRepository::getRelatedScientists(Computer computer)
+std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name)
 {
     QSqlQuery query;
     std::vector<Scientist> scientists;
     query.prepare("SELECT id FROM Computers WHERE name = :dbName");
-    query.bindValue(":dbName", QString::fromStdString(computer.getName()));
+    query.bindValue(":dbName", QString::fromStdString(name));
     query.exec();
     query.next();
 

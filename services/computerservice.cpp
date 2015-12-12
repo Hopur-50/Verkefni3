@@ -26,9 +26,9 @@ bool ComputerService::addRelation(Scientist scientist, Computer computer)
     return computerRepo.addRelation(scientist, computer);
 }
 
-std::vector<Scientist> ComputerService::getRelatedScientists(Computer computer)
+std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
 {
-    return computerRepo.getRelatedScientists(computer);
+    return computerRepo.getRelatedScientists(name);
 }
 
 void ComputerService::changeSortOrder(int input)

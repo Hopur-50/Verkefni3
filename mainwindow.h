@@ -56,6 +56,8 @@ private slots:
 
     void on_tableScientist_clicked(const QModelIndex &index);
 
+    void on_tableComputer_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     std::string input_text;

@@ -18,7 +18,7 @@ public:
     bool addComputer(Computer computer);
     std::vector<Computer> getAllComputers(std::string orderBy);
     std::vector<Computer> searchForComputers(std::string searchTerm);
-    std::vector<Scientist> getRelatedScientists(Computer computer);
+    std::vector<Scientist> getRelatedScientists(std::string name);
     bool addRelation(Scientist scientist, Computer computer);
 
 private:
