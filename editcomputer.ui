@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QDialogButtonBox" name="buttonOkCancel">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -42,7 +42,7 @@
     <string>Name of computer:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="comboWasItBuilt">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -75,7 +75,7 @@
     <string>Year of construction: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineYearOfConstruction">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -107,7 +107,7 @@
     <string>Type:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineNameComputer">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -130,7 +130,7 @@
     <string>Was it built?</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineType">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -166,7 +166,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>accepted()</signal>
    <receiver>EditComputer</receiver>
    <slot>accept()</slot>
@@ -182,7 +182,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>rejected()</signal>
    <receiver>EditComputer</receiver>
    <slot>reject()</slot>

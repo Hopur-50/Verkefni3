@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QDialogButtonBox" name="buttonOkCancel">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="comboGender">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -80,7 +80,7 @@
     <string>(Optional) Skip if scientist is still alive.</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineYearOfDeath">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -151,7 +151,7 @@
     <string>Year of death: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineNameScientist">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -161,7 +161,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineYearOfBirth">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -175,7 +175,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>accepted()</signal>
    <receiver>EditScientist</receiver>
    <slot>accept()</slot>
@@ -191,7 +191,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonOkCancel</sender>
    <signal>rejected()</signal>
    <receiver>EditScientist</receiver>
    <slot>reject()</slot>
