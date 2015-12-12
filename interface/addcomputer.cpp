@@ -16,7 +16,7 @@ AddComputer::~AddComputer()
 void AddComputer::on_buttonOkCancel_accepted()
 {
     std::string name = ui->lineComputerName->text().toStdString();
-    std::string type = ui->lineType->text().toStdString();
+    std::string type = ui->comboType->currentText().toStdString();
     std::string built = ui->comboWasItBuilt->currentText().toStdString();
 
     if (built == "No")

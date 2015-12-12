@@ -23,7 +23,7 @@
       <enum>QFrame::Sunken</enum>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#ff42cc;&quot;&gt;Add new computer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#000000;&quot;&gt;Add new computer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>
@@ -48,7 +48,26 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineType"/>
+    <widget class="QComboBox" name="comboType">
+     <property name="currentText">
+      <string>Electronic</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Electronic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mechanical</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Transistored</string>
+      </property>
+     </item>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_3">

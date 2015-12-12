@@ -153,5 +153,8 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
-
+    int currentRow = index.row();
+    std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
+    std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
+    displayScientists(scientists);
 }
