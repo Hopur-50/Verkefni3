@@ -141,3 +141,16 @@ void MainWindow::on_inputFilterComputers_textChanged()
     vector<Computer> computers = compServ.searchForComputers(userInput);
     displayComputers(computers);
 }
+
+void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
+{
+    int currentRow = index.row();
+    std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
+    sexType gender = utils::stringToSex(ui->tableScientist->item(currentRow, 1)->text().toStdString());
+    int yearBorn = ui->tableScientist->item(currentRow, 2)->text().toInt();
+
+    Scientist sci = Scientist(name, gender, yearBorn);
+
+    std::vector<Computer> computers = sciServ.getRelatedComputers(sci);
+    displayComputers(computers);
+}

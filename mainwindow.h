@@ -54,6 +54,8 @@ private slots:
 
     void on_inputFilterComputers_textChanged();
 
+    void on_tableScientist_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     std::string input_text;
