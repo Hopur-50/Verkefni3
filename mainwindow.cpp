@@ -126,5 +126,18 @@ void MainWindow::on_addRelationsButton_clicked()
 
 }
 
+void MainWindow::on_inputFilterScientists_textChanged()
+{
+    string userInput = ui->inputFilterScientists->text().toStdString();
 
+    vector<Scientist> scientists = sciServ.searchForScientists(userInput);
+    displayScientists(scientists);
+}
 
+void MainWindow::on_inputFilterComputers_textChanged()
+{
+    string userInput = ui->inputFilterComputers->text().toStdString();
+
+    vector<Computer> computers = compServ.searchForComputers(userInput);
+    displayComputers(computers);
+}

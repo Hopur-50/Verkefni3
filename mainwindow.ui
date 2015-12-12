@@ -520,26 +520,6 @@
      <string>Add relations</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>20</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTableWidget" name="tableScientist">
     <property name="geometry">
      <rect>
@@ -586,7 +566,7 @@
      <bool>true</bool>
     </attribute>
     <attribute name="verticalHeaderVisible">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <attribute name="verticalHeaderCascadingSectionResizes">
      <bool>true</bool>
@@ -598,7 +578,7 @@
      <bool>true</bool>
     </attribute>
     <attribute name="verticalHeaderStretchLastSection">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <column>
      <property name="text">
@@ -633,6 +613,9 @@
     <property name="horizontalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
     <property name="sortingEnabled">
      <bool>true</bool>
     </property>
@@ -649,7 +632,7 @@
      <bool>true</bool>
     </attribute>
     <attribute name="verticalHeaderVisible">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <attribute name="verticalHeaderCascadingSectionResizes">
      <bool>true</bool>
@@ -658,10 +641,10 @@
      <number>40</number>
     </attribute>
     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <attribute name="verticalHeaderStretchLastSection">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <column>
      <property name="text">
@@ -679,6 +662,35 @@
      </property>
     </column>
    </widget>
+   <widget class="QLineEdit" name="inputFilterScientists">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>451</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Filter scientists</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="inputFilterComputers">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>20</y>
+      <width>371</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Filter computers</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -686,7 +698,7 @@
      <x>0</x>
      <y>0</y>
      <width>1233</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -48,6 +48,10 @@ private slots:
 
     void displayComputers(std::vector<Computer> comp);
 
+    void on_inputFilterScientists_textChanged();
+
+    void on_inputFilterComputers_textChanged();
+
 private:
     Ui::MainWindow *ui;
     std::string input_text;
