@@ -1,4 +1,5 @@
 #include "baserepository.h"
+#include <QDebug>
 
 BaseRepository::BaseRepository()
 {
@@ -7,6 +8,16 @@ BaseRepository::BaseRepository()
     db.setDatabaseName(dbName);
 
     db.open();
+
+    if (!db.open())
+        {
+            qDebug() << "badshit";
+        }
+
+        else
+        {
+            qDebug() << "goodshit";
+        }
 }
 
 BaseRepository::~BaseRepository()
