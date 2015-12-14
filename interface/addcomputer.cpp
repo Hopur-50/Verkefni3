@@ -27,5 +27,46 @@ void AddComputer::on_buttonOkCancel_accepted()
     {
         int yearConstructed = ui->lineYearOfConstruction->text().toInt();
         compServ.addComputer(Computer(name, type, true, yearConstructed));
+
+//        QLineEdit::setValidator();
+//        yearConstructed->setValidator( new QIntValidator(0, 2015, this) );
+
+//        QRegExp rx("\\d+");
+//             QLineEdit *edit = new QLineEdit();
+//             edit->setValidator(new QIntValidator(0, 2015, this));
+//             this->setCentralWidget(edit);
+    }
+}
+
+//bool AddComputer::isValid() const
+//{
+//    std::string emptyLine = "";
+
+//    if(ui->lineYearOfConstruction->text().toStdString() == emptyLine)
+//    {
+//        return false == (this, "Error!", "Line is empty");
+//    }
+//    else
+//    {
+//        return true;
+//    }
+
+//    return false;
+//}
+
+bool AddComputer::isValid(QString s, int i) const
+{
+    if (s.isEmpty() || s == "-")
+    {
+        return QValidator::Invalid;
+    }
+
+    if (i > 0 && i < 2016)
+    {
+       return QIntValidator::Acceptable;
+    }
+    else
+    {
+       return QIntValidator::Invalid;
     }
 }
