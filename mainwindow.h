@@ -67,7 +67,10 @@ private:
     ComputerService compServ;
     BaseService baseServ;
 
+    std::vector<Scientist> displayedScientists;
+    std::vector<Computer> displayedComputers;
 
+    //Scientist getScientist(int index);
 };
 
 #endif // MAINWINDOW_H

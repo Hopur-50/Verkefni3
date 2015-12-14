@@ -61,6 +61,8 @@ void MainWindow::displayScientists(vector<Scientist> sci)
         ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
     }
     ui->tableScientist->hideColumn(4);
+
+    displayedScientists = sci;
 }
 
 void MainWindow::displayAllComputers()
@@ -76,6 +78,7 @@ void MainWindow::displayComputers(vector<Computer> comp)
     ui->tableComputer->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableComputer->setHorizontalHeaderItem(1, new QTableWidgetItem("Type"));
     ui->tableComputer->setHorizontalHeaderItem(2, new QTableWidgetItem("Year built"));
+    ui->tableComputer->setHorizontalHeaderItem(3, new QTableWidgetItem("ID"));
 
     for (unsigned int row = 0; row < comp.size(); row++)
     {
@@ -95,6 +98,7 @@ void MainWindow::displayComputers(vector<Computer> comp)
 
     ui->tableComputer->hideColumn(3);
 
+    displayedComputers = comp;
 }
 
 void MainWindow::on_addNewScientistButton_clicked()
@@ -112,7 +116,9 @@ void MainWindow::on_addNewComputerButton_clicked()
 
 void MainWindow::on_editScientistButton_clicked()
 {
+    int currentRow = ui->tableScientist->currentRow();
     EditScientist editSci;
+    editSci.displayInfo(displayedScientists[currentRow]);
     editSci.exec();
 }
 
