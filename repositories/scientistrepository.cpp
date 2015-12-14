@@ -65,6 +65,7 @@ std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy
 
     while (query.next())
     {
+
         std::string name = query.value(0).toString().toStdString();
         std::string sexString = query.value(1).toString().toStdString();
         enum sexType sex;
@@ -80,14 +81,19 @@ std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy
 
         int yearBorn = query.value(2).toInt();
         int yearDied = query.value(3).toInt();
+        int id = query.value(4).toInt();
 
         if (query.value(3).isNull())
         {
-            scientists.push_back(Scientist(name, sex, yearBorn));
+            Scientist sciGuy(name, sex, yearBorn);
+            sciGuy.setId(id);
+            scientists.push_back(sciGuy);
         }
         else
         {
-            scientists.push_back(Scientist(name, sex, yearBorn, yearDied));
+            Scientist sciGuy(name, sex, yearBorn, yearDied);
+            sciGuy.setId(id);
+            scientists.push_back(sciGuy);
         }
     }
     return scientists;

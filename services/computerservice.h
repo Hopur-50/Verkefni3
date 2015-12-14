@@ -15,7 +15,6 @@ public:
     bool addComputer(Computer computer);
     bool addRelation(std::string sciName, std::string compName);
     std::vector<Scientist> getRelatedScientists(std::string name);
-    void changeSortOrder(int input);
 
 private:
     ComputerRepository computerRepo;

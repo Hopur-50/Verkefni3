@@ -12,7 +12,6 @@ public:
     std::vector<Scientist> searchForScientists(std::string searchTerm);
     bool addScientist(Scientist scientist);
     std::vector<Computer> getRelatedComputers(std::string name);
-    void changeSortOrder(int input);
 
 private:
     ScientistRepository scientistRepo;
