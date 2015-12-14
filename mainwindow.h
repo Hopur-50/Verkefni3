@@ -47,9 +47,13 @@ private slots:
 
     void displayScientists(std::vector<Scientist> sci);
 
+    void displayRelatedComputers(std::vector<Computer> comp);
+
     void displayAllComputers();
 
     void displayComputers(std::vector<Computer> comp);
+
+    void displayRelatedScientists(std::vector<Scientist> sci);
 
     void on_inputFilterScientists_textChanged();
 
@@ -59,6 +63,10 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
+
+    void on_buttonAddRelation_clicked();
+
+    void on_buttonAddRelation_2_clicked();
 
 private:
     Ui::MainWindow *ui;
