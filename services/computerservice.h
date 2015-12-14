@@ -13,7 +13,6 @@ public:
     std::vector<Computer> getAllComputers();
     std::vector<Computer> searchForComputers(std::string searchTerm);
     bool addComputer(Computer computer);
-    bool addRelation(std::string sciName, std::string compName);
     std::vector<Scientist> getRelatedScientists(std::string name);
 
 private:

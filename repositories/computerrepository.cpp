@@ -167,27 +167,3 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
     return scientists;
 }
 
-bool ComputerRepository::addRelation(std::string sciName, std::string compName)
-{
-    QSqlQuery query;
-
-    query.prepare("SELECT id FROM Computers WHERE name = :dbComputer");
-    query.bindValue(":dbComputer", QString::fromStdString(compName));
-    query.exec();
-    query.next();
-    int cId = query.value(0).toInt();
-
-    QSqlQuery query2;
-    query2.prepare("SELECT id FROM Scientists WHERE name = :dbScientist");
-    query2.bindValue(":dbScientist", QString::fromStdString(sciName));
-    query2.exec();
-    query2.next();
-    int csId = query2.value(0).toInt();
-
-    QSqlQuery insertQuery;
-    insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
-    insertQuery.bindValue(":dbCId", QString::number(cId));
-    insertQuery.bindValue(":dbCsId", QString::number(csId));
-    return insertQuery.exec();
-}
-
