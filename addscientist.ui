@@ -2,22 +2,28 @@
 <ui version="4.0">
  <class>AddScientist</class>
  <widget class="QDialog" name="AddScientist">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>359</width>
-    <height>302</height>
+    <width>480</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label_4">
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Sunken</enum>
@@ -74,21 +80,47 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineYearOfBirth"/>
+    <widget class="QLineEdit" name="lineYearOfBirth">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Year of death:   (Optional)</string>
+      <string>Year of death:  </string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLineEdit" name="lineYearOfDeath">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="placeholderText">
       <string>Skip if scientist is still alive</string>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonOkCancel">
