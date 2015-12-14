@@ -104,8 +104,14 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>125</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="placeholderText">
-      <string>Skip if scientist is still alive</string>
+      <string>Skip if still alive</string>
      </property>
     </widget>
    </item>
