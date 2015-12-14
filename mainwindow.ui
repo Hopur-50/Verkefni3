@@ -436,7 +436,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -666,9 +666,9 @@
        <widget class="QPushButton" name="buttonAddRelation">
         <property name="geometry">
          <rect>
-          <x>410</x>
+          <x>380</x>
           <y>30</y>
-          <width>81</width>
+          <width>111</width>
           <height>26</height>
          </rect>
         </property>

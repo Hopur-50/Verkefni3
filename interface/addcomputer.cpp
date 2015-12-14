@@ -20,9 +20,9 @@ void AddComputer::on_buttonOkCancel_accepted()
     std::string built = ui->comboWasItBuilt->currentText().toStdString();
     int yearConstructed = ui->lineYearOfConstruction->text().toInt();
 
-    if (ui->lineComputerName->text() == "")
+    if (ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
     {
-            QValidator::Invalid;
+            QValidator::Invalid;  //Eigum við að hafa eitthvað villu message? hvað finnst ykkur? Kv. Sandra
     }
     else
     {
@@ -35,11 +35,6 @@ void AddComputer::on_buttonOkCancel_accepted()
             compServ.addComputer(Computer(name, type, true, yearConstructed));
         }
     }
-
-//    if (ui->lineComputerName->text() == "")
-//    {
-//        QValidator::Invalid;
-//    }
 
 //    if (ui->lineYearOfConstruction > 0 && ui->lineYearOfConstruction < 2016)
 //    {

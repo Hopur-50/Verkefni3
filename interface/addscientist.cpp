@@ -22,13 +22,20 @@ void AddScientist::on_buttonOkCancel_accepted()
     int yearBorn = ui->lineYearOfBirth->text().toInt();
     int yearDied = ui->lineYearOfDeath->text().toInt();
 
-    if (ui->lineYearOfDeath->text() == "")
+    if (ui->lineScientistName->text() == "" || ui->lineScientistName->text() == " ")
     {
-        sciServ.addScientist(Scientist(name,gender, yearBorn));
+            QValidator::Invalid;  //Eigum við að hafa eitthvað villu message? hvað finnst ykkur? Kv. Sandra
     }
     else
     {
-        sciServ.addScientist(Scientist(name,gender,yearBorn,yearDied));
+        if (ui->lineYearOfDeath->text() == "" && ui->lineYearOfBirth->text().toInt() < 2016)
+        {
+            sciServ.addScientist(Scientist(name,gender, yearBorn));
+        }
+        else if(ui->lineYearOfBirth->text().toInt() < 2016)
+        {
+            sciServ.addScientist(Scientist(name,gender,yearBorn,yearDied));
+        }
     }
 }
 
