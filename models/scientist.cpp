@@ -39,3 +39,13 @@ int Scientist::getYearDied() const
 {
     return yearDied;
 }
+
+void Scientist::setId(int id)
+{
+   this->id = id;
+}
+
+int Scientist::getId() const
+{
+    return id;
+}
