@@ -14,6 +14,7 @@ public:
     std::vector<Computer> searchForComputers(std::string searchTerm);
     bool addComputer(Computer computer);
     bool updateComputer(Computer computer);
+    bool deleteComputer(int id);
     std::vector<Scientist> getRelatedScientists(std::string name);
 
 private:

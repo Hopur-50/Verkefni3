@@ -62,6 +62,20 @@ bool ComputerRepository::updateComputer(Computer computer)
     return query.exec();
 }
 
+bool ComputerRepository::deleteComputer(int id)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM Relations WHERE computersID = :dbId");
+    query.bindValue(":dbId", id);
+    query.exec();
+
+    QSqlQuery query2;
+    query2.prepare("DELETE FROM Computers WHERE id = :dbId");
+    query2.bindValue(":dbId", id);
+    return query2.exec();
+}
+
+
 std::vector<Computer> ComputerRepository::getAllComputers(std::string orderBy)
 {
     std::vector<Computer> computers;

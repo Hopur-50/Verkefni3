@@ -15,6 +15,9 @@ public:
     explicit EditScientist(QWidget *parent = 0);
     ~EditScientist();
 
+private slots:
+    void on_buttonOkCancel_accepted();
+
 private:
     Ui::EditScientist *ui;
 };

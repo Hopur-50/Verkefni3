@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <string>
 #include <QDebug>
+#include <QMessageBox>
 #include <QMainWindow>
 #include "services/computerservice.h"
 #include "services/scientistservice.h"
@@ -124,12 +125,42 @@ void MainWindow::on_editComputerButton_clicked()
 
 void MainWindow::on_deleteScientistButton_clicked()
 {
-
+    int answer = QMessageBox::question(this, "Confirm", "Are you sure you wish to delete the selected scientist?");
+    if (answer == QMessageBox::No)
+    {
+        return;
+    }
+    int currentRow = ui->tableScientist->currentIndex().row();
+    int id = ui->tableScientist->item(currentRow, 4)->text().toInt();
+    /*bool success = sciServ.deleteScientist(id);
+    if(success)
+    {
+        //YAY
+    }
+    else
+    {
+        //NAY
+    }*/
 }
 
 void MainWindow::on_deleteComputerButton_clicked()
 {
-
+    int answer = QMessageBox::question(this, "Confirm", "Are you sure you wish to delete the selected computer?");
+    if (answer == QMessageBox::No)
+    {
+        return;
+    }
+    int currentRow = ui->tableComputer->currentIndex().row();
+    int id = ui->tableComputer->item(currentRow, 3)->text().toInt();
+    bool success = compServ.deleteComputer(id);
+    if(success)
+    {
+        //YAY
+    }
+    else
+    {
+        //NAY
+    }
 }
 
 void MainWindow::on_addRelationsButton_clicked()
@@ -157,6 +188,7 @@ void MainWindow::on_inputFilterComputers_textChanged()
 void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
     ui->editScientistButton->setEnabled(true);
+    ui->deleteScientistButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
     std::vector<Computer> computers = sciServ.getRelatedComputers(name);
@@ -166,6 +198,7 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
     ui->editComputerButton->setEnabled(true);
+    ui->deleteComputerButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
