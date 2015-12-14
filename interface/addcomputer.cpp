@@ -32,22 +32,6 @@ void AddComputer::on_buttonOkCancel_accepted()
 
 }
 
-//bool AddComputer::isValid() const
-//{
-//    std::string emptyLine = "";
-
-//    if(ui->lineYearOfConstruction->text().toStdString() == emptyLine)
-//    {
-//        return false == (this, "Error!", "Line is empty");
-//    }
-//    else
-//    {
-//        return true;
-//    }
-
-//    return false;
-//}
-
 bool AddComputer::isValid(QString s, int i) const
 {
     if (s.isEmpty() || s == "-")
