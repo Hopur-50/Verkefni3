@@ -51,17 +51,17 @@
     <widget class="QComboBox" name="comboGender">
      <item>
       <property name="text">
-       <string>Other</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
        <string>Female</string>
       </property>
      </item>
      <item>
       <property name="text">
        <string>Male</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
       </property>
      </item>
     </widget>
