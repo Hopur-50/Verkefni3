@@ -613,6 +613,11 @@
           <string>Year died</string>
          </property>
         </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
        </widget>
        <widget class="QTableView" name="relatedComputers">
         <property name="geometry">
@@ -778,6 +783,11 @@
           <string>Year built</string>
          </property>
         </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
        </widget>
        <widget class="QTableView" name="tableView">
         <property name="geometry">
@@ -813,7 +823,7 @@
      <x>0</x>
      <y>0</y>
      <width>1319</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
