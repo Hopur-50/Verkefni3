@@ -23,6 +23,7 @@ private slots:
 private:
     Ui::AddComputer *ui;
     ComputerService compServ;
+    bool isValid(QString s, int i) const;
 };
 
 #endif // ADDCOMPUTER_H
