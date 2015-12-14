@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1319</width>
-    <height>771</height>
+    <width>588</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="palette">
@@ -492,7 +492,7 @@
          <rect>
           <x>20</x>
           <y>60</y>
-          <width>474</width>
+          <width>471</width>
           <height>25</height>
          </rect>
         </property>
@@ -511,8 +511,8 @@
          <rect>
           <x>20</x>
           <y>100</y>
-          <width>474</width>
-          <height>210</height>
+          <width>471</width>
+          <height>261</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -619,30 +619,27 @@
          </property>
         </column>
        </widget>
-       <widget class="QTableView" name="relatedComputers">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>360</y>
-          <width>474</width>
-          <height>170</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>330</y>
+          <y>380</y>
           <width>161</width>
           <height>17</height>
          </rect>
         </property>
         <property name="text">
          <string>Related computers</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableRelatedComputers">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>400</y>
+          <width>471</width>
+          <height>131</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -680,8 +677,8 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>61</y>
-          <width>474</width>
+          <y>60</y>
+          <width>471</width>
           <height>25</height>
          </rect>
         </property>
@@ -707,8 +704,8 @@
          <rect>
           <x>20</x>
           <y>100</y>
-          <width>474</width>
-          <height>210</height>
+          <width>471</width>
+          <height>261</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -789,27 +786,27 @@
          </property>
         </column>
        </widget>
-       <widget class="QTableView" name="tableView">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>360</y>
-          <width>474</width>
-          <height>170</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>330</y>
+          <y>380</y>
           <width>111</width>
           <height>17</height>
          </rect>
         </property>
         <property name="text">
          <string>Related scientists</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableRelatedScientists">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>400</y>
+          <width>471</width>
+          <height>131</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -822,7 +819,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1319</width>
+     <width>588</width>
      <height>21</height>
     </rect>
    </property>
