@@ -162,24 +162,29 @@ std::vector<Computer> ScientistRepository::getRelatedComputers(std::string name)
     while(query.next())
     {
         int cId=query.value(i).toInt();
-        query2.prepare("SELECT name, buildYear, computerType, constructed FROM Computers WHERE id = :dbCId");
+        query2.prepare(QString::fromStdString(constants::SELECT_ALL_COMPUTERS) + " WHERE id = :dbCId");
         query2.bindValue(":dbCId", cId);
         query2.exec();
 
         while(query2.next())
         {
             std::string name = query2.value(0).toString().toStdString();
-            int buildYear = query2.value(1).toInt();
-            std::string type = query2.value(2).toString().toStdString();
-            bool wasItConstructed = query2.value(3).toBool();
+            std::string type = query2.value(1).toString().toStdString();
+            bool wasItConstructed = query2.value(2).toBool();
+            int yearOfConstruction = query2.value(3).toInt();
+            int id = query.value(4).toInt();
 
-            if(query2.value(1).isNull())
+            if(query2.value(2).isNull())
             {
-                computers.push_back(Computer(name, type, wasItConstructed));
+                Computer compMachine(name, type, wasItConstructed);
+                compMachine.setId(id);
+                computers.push_back(compMachine);
             }
             else
             {
-                computers.push_back(Computer(name, type, wasItConstructed, buildYear));
+                Computer compMachine(name, type, wasItConstructed, yearOfConstruction);
+                compMachine.setId(id);
+                computers.push_back(compMachine);
             }
         }
         i++;
