@@ -452,8 +452,8 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>520</y>
-          <width>153</width>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
@@ -464,22 +464,22 @@
        <widget class="QPushButton" name="editScientistButton">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>520</y>
-          <width>154</width>
+          <x>110</x>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
         <property name="text">
-         <string>Edit</string>
+         <string>Update</string>
         </property>
        </widget>
        <widget class="QPushButton" name="deleteScientistButton">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>520</y>
-          <width>153</width>
+          <x>200</x>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
@@ -491,7 +491,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>20</y>
+          <y>60</y>
           <width>474</width>
           <height>25</height>
          </rect>
@@ -510,9 +510,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>100</y>
           <width>474</width>
-          <height>450</height>
+          <height>210</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -614,6 +614,32 @@
          </property>
         </column>
        </widget>
+       <widget class="QTableView" name="relatedComputers">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>360</y>
+          <width>474</width>
+          <height>170</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>330</y>
+          <width>161</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Related computers</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -622,22 +648,22 @@
        <widget class="QPushButton" name="editComputerButton">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>520</y>
-          <width>153</width>
+          <x>110</x>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
         <property name="text">
-         <string>Edit</string>
+         <string>Update</string>
         </property>
        </widget>
        <widget class="QPushButton" name="deleteComputerButton">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>520</y>
-          <width>153</width>
+          <x>200</x>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
@@ -649,7 +675,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>21</y>
+          <y>61</y>
           <width>474</width>
           <height>25</height>
          </rect>
@@ -662,8 +688,8 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>520</y>
-          <width>153</width>
+          <y>30</y>
+          <width>81</width>
           <height>26</height>
          </rect>
         </property>
@@ -675,9 +701,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>100</y>
           <width>474</width>
-          <height>450</height>
+          <height>210</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -752,6 +778,29 @@
           <string>Year built</string>
          </property>
         </column>
+       </widget>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>360</y>
+          <width>474</width>
+          <height>170</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>330</y>
+          <width>111</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Related scientists</string>
+        </property>
        </widget>
       </widget>
      </widget>
