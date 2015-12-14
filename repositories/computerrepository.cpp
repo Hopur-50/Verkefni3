@@ -172,13 +172,13 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
             std::string name = query2.value(0).toString().toStdString();
             enum sexType sex;
             std::string sexString = query2.value(1).toString().toStdString();
-            if(sexString == "m" || sexString == " m" || sexString == "male" || sexString == " male")
+            if(sexString == "Male")
             {
-                sex = male;
+                sex = Male;
             }
             else
             {
-                sex = female;
+                sex = Female;
             }
             int yearBorn = query2.value(2).toInt();
             int yearDied = query2.value(3).toInt();

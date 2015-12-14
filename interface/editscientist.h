@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::EditScientist *ui;
+    int sciID;
     ScientistService sciServ;
 };
 

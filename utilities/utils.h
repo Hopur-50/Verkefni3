@@ -14,9 +14,9 @@ namespace utils
     int stringToInt(std::string str);
     std::string stringToLower(std::string str);
     std::string intToString(int number);
-    enum sexType intToSex(int number);
-    enum sexType stringToSex(std::string str);
-    std::string sexToString(enum sexType gender);
+    sexType intToSex(int number);
+    sexType stringToSex(std::string str);
+    std::string sexToString(sexType gender);
 }
 
 #endif // UTILS_H
