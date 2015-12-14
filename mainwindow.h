@@ -59,17 +59,29 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
+<<<<<<< HEAD
+=======
+;
+>>>>>>> 54d9480397f0f5f0a107c67d5d230f594accba6d
 
 private:
     Ui::MainWindow *ui;
     std::string input_text;
+    int selectedSciRow; //Keeps track of which Scientist is selected from table
+    int selectedCompRow; //Keeps track of which Computer is selected from table
 
     ScientistService sciServ;
     ComputerService compServ;
     BaseService baseServ;
 
+    std::vector<Scientist> displayedScientists;
+    std::vector<Computer> displayedComputers;
 
+<<<<<<< HEAD
 
+=======
+    Scientist getScientist(int id);
+>>>>>>> 54d9480397f0f5f0a107c67d5d230f594accba6d
 };
 
 #endif // MAINWINDOW_H

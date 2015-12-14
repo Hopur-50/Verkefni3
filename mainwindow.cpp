@@ -61,7 +61,9 @@ void MainWindow::displayScientists(vector<Scientist> sci)
         ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
         ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
     }
-    ui->tableScientist->hideColumn(4);
+    //ui->tableScientist->hideColumn(4);
+
+    displayedScientists = sci;
 }
 
 void MainWindow::displayAllComputers()
@@ -77,6 +79,7 @@ void MainWindow::displayComputers(vector<Computer> comp)
     ui->tableComputer->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableComputer->setHorizontalHeaderItem(1, new QTableWidgetItem("Type"));
     ui->tableComputer->setHorizontalHeaderItem(2, new QTableWidgetItem("Year built"));
+    ui->tableComputer->setHorizontalHeaderItem(3, new QTableWidgetItem("ID"));
 
     for (unsigned int row = 0; row < comp.size(); row++)
     {
@@ -96,6 +99,7 @@ void MainWindow::displayComputers(vector<Computer> comp)
 
     ui->tableComputer->hideColumn(3);
 
+    displayedComputers = comp;
 }
 
 void MainWindow::on_addNewScientistButton_clicked()
@@ -113,7 +117,9 @@ void MainWindow::on_addNewComputerButton_clicked()
 
 void MainWindow::on_editScientistButton_clicked()
 {
+    int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     EditScientist editSci;
+    editSci.displayInfo(getScientist(sciID));
     editSci.exec();
 }
 
@@ -130,9 +136,8 @@ void MainWindow::on_deleteScientistButton_clicked()
     {
         return;
     }
-    int currentRow = ui->tableScientist->currentIndex().row();
-    int id = ui->tableScientist->item(currentRow, 4)->text().toInt();
-    /*bool success = sciServ.deleteScientist(id);
+    int id = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
+    bool success = sciServ.deleteScientist(id);
     if(success)
     {
         //YAY
@@ -140,7 +145,7 @@ void MainWindow::on_deleteScientistButton_clicked()
     else
     {
         //NAY
-    }*/
+    }
 }
 
 void MainWindow::on_deleteComputerButton_clicked()
@@ -150,8 +155,7 @@ void MainWindow::on_deleteComputerButton_clicked()
     {
         return;
     }
-    int currentRow = ui->tableComputer->currentIndex().row();
-    int id = ui->tableComputer->item(currentRow, 3)->text().toInt();
+    int id = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     bool success = compServ.deleteComputer(id);
     if(success)
     {
@@ -165,8 +169,8 @@ void MainWindow::on_deleteComputerButton_clicked()
 
 void MainWindow::on_addRelationsButton_clicked()
 {
-    AddRelation addRel;
-    addRel.exec();
+    //AddRelation addRel;
+    //addRel.exec();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
@@ -189,8 +193,8 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
     ui->editScientistButton->setEnabled(true);
     ui->deleteScientistButton->setEnabled(true);
-    int currentRow = index.row();
-    std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
+    selectedSciRow = index.row();
+    std::string name = ui->tableScientist->item(selectedSciRow, 0)->text().toStdString();
     std::vector<Computer> computers = sciServ.getRelatedComputers(name);
     displayComputers(computers);
 }
@@ -199,8 +203,20 @@ void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
     ui->editComputerButton->setEnabled(true);
     ui->deleteComputerButton->setEnabled(true);
-    int currentRow = index.row();
-    std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
+    selectedCompRow = index.row();
+    std::string name = ui->tableComputer->item(selectedCompRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
     displayScientists(scientists);
+}
+
+Scientist MainWindow::getScientist(int id)
+{
+    for (unsigned int i = 0; i < displayedScientists.size(); i++)
+    {
+        if (id == displayedScientists.at(i).getId())
+        {
+            return displayedScientists.at(i);
+        }
+    }
+    return displayedScientists[0]; //Should not reach this point.
 }

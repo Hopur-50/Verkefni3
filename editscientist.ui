@@ -84,6 +84,12 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+     </property>
+     <property name="maxLength">
+      <number>4</number>
+     </property>
     </widget>
    </item>
    <item>
@@ -100,6 +106,12 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+     </property>
+     <property name="maxLength">
+      <number>4</number>
      </property>
      <property name="placeholderText">
       <string>Skip if still alive</string>

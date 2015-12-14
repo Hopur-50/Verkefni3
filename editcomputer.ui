@@ -93,6 +93,9 @@
      <property name="inputMethodHints">
       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
      </property>
+     <property name="maxLength">
+      <number>4</number>
+     </property>
      <property name="dragEnabled">
       <bool>false</bool>
      </property>
