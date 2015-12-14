@@ -15,11 +15,7 @@ EditScientist::~EditScientist()
     delete ui;
 }
 
-<<<<<<< HEAD
-void EditScientist::on_buttonOkCancel_accepted()
-{
 
-=======
 void EditScientist::displayInfo(Scientist sci)
 {
     ui->comboGender->setCurrentText(QString::fromStdString(utils::sexToString(sci.getSex())));
@@ -39,5 +35,4 @@ void EditScientist::on_buttonOkCancel_accepted()
     newScientist.setId(sci->getId());
 
     sciServ.updateScientist(newScientist);*/
->>>>>>> 54d9480397f0f5f0a107c67d5d230f594accba6d
 }

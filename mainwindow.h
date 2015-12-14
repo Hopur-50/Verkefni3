@@ -59,10 +59,6 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
-<<<<<<< HEAD
-=======
-;
->>>>>>> 54d9480397f0f5f0a107c67d5d230f594accba6d
 
 private:
     Ui::MainWindow *ui;
@@ -77,11 +73,7 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
-<<<<<<< HEAD
-
-=======
     Scientist getScientist(int id);
->>>>>>> 54d9480397f0f5f0a107c67d5d230f594accba6d
 };
 
 #endif // MAINWINDOW_H
