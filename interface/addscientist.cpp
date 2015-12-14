@@ -20,6 +20,7 @@ void AddScientist::on_buttonOkCancel_accepted()
     std::string name = ui->lineScientistName->text().toStdString();
     sexType gender = utils::stringToSex(ui->comboGender->currentText().toStdString());
     int yearBorn = ui->lineYearOfBirth->text().toInt();
+    int yearDied = ui->lineYearOfDeath->text().toInt();
 
     if (ui->lineYearOfDeath->text() == "")
     {
@@ -27,7 +28,6 @@ void AddScientist::on_buttonOkCancel_accepted()
     }
     else
     {
-        int yearDied = ui->lineYearOfDeath->text().toInt();
         sciServ.addScientist(Scientist(name,gender,yearBorn,yearDied));
     }
 }
