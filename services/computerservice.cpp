@@ -26,11 +26,6 @@ bool ComputerService::updateComputer(Computer computer)
     return computerRepo.updateComputer(computer);
 }
 
-bool ComputerService::addRelation(std::string sciName, std::string compName)
-{
-    return computerRepo.addRelation(sciName, compName);
-}
-
 std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
 {
     return computerRepo.getRelatedScientists(name);

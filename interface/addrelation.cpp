@@ -42,5 +42,5 @@ void AddRelation::on_buttonBox_accepted()
     std::string sciName = ui->comboSelectScientist->currentText().toStdString();
     std::string compName = ui->comboSelectComputer->currentText().toStdString();
 
-    compServ.addRelation(sciName, compName);
+    baseServ.addRelation(sciName, compName);
 }
