@@ -19,7 +19,7 @@ public:
     std::vector<Computer> getAllComputers(std::string orderBy);
     std::vector<Computer> searchForComputers(std::string searchTerm);
     std::vector<Scientist> getRelatedScientists(std::string name);
-    bool addRelation(Scientist scientist, Computer computer);
+    bool addRelation(std::string sciName, std::string compName);
 
 private:
 
