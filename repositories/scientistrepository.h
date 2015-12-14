@@ -14,12 +14,10 @@ public:
     ScientistRepository();
 
     bool addScientist(Scientist scientist);
+    bool updateScientist(Scientist scientist);
     std::vector<Scientist> getAllScientists(std::string orderBy);
     std::vector<Scientist> searchForScientists(std::string searchTerm);
     std::vector<Computer> getRelatedComputers(std::string name);
-
-private:
-    std::string fileName;
 };
 
 #endif // SCIENTISTREPOSITORY_H

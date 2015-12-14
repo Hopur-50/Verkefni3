@@ -4,7 +4,7 @@
 
 ScientistService::ScientistService()
 {
-    currentOrder = constants::SORT_SCIENTIST[0];
+
 }
 
 std::vector<Scientist> ScientistService::getAllScientists()
@@ -22,12 +22,14 @@ bool ScientistService::addScientist(Scientist scientist)
     return scientistRepo.addScientist(scientist);
 }
 
+bool ScientistService::updateScientist(Scientist scientist)
+{
+    return scientistRepo.updateScientist(scientist);
+}
+
 std::vector<Computer> ScientistService::getRelatedComputers(std::string name)
 {
     return scientistRepo.getRelatedComputers(name);
 }
 
-void ScientistService::changeSortOrder(int input)
-{
-    currentOrder = constants::SORT_SCIENTIST[input - 1];
-}
+

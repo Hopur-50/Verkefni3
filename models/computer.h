@@ -14,12 +14,15 @@ public:
     int getYearOfConstruction() const;
     bool getWasItConstructed()const;
 
+    void setId(int id);
+    int getId() const;
 
 private:
     std::string name;
     std::string type;
     int yearOfConstruction;
     bool wasItConstructed;
+    int id;
 
 };
 

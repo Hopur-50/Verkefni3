@@ -14,6 +14,8 @@ class BaseRepository
 public:
     BaseRepository();
     ~BaseRepository();
+    bool addRelation(std::string sciName, std::string compName);
+    bool deleteRelation(int cId, int csId);
 
 private:
     QSqlDatabase db;

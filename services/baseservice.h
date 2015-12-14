@@ -8,6 +8,8 @@ class BaseService
 public:
     BaseService();
 
+    bool addRelation(std::string sciName, std::string compName);
+
 private:
     BaseRepository baseRepo;
 };

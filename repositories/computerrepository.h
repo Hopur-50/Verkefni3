@@ -13,13 +13,12 @@ class ComputerRepository
 {
 public:
     ComputerRepository();
-    ~ComputerRepository();
 
     bool addComputer(Computer computer);
+    bool updateComputer(Computer computer);
     std::vector<Computer> getAllComputers(std::string orderBy);
     std::vector<Computer> searchForComputers(std::string searchTerm);
     std::vector<Scientist> getRelatedScientists(std::string name);
-    bool addRelation(std::string sciName, std::string compName);
 
 private:
 

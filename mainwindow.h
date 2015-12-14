@@ -69,6 +69,7 @@ private:
     ComputerService compServ;
     BaseService baseServ;
 
+
 };
 
 #endif // MAINWINDOW_H

@@ -20,13 +20,15 @@ public:
     int getYearBorn() const;
     int getYearDied() const;
 
-    bool contains(std::string searchTerm);
+    void setId(int id);
+    int getId() const;
 
 private:
     std::string name;
     enum sexType sex;
     int yearBorn;
     int yearDied;
+    int id;
 };
 
 #endif // SCIENTIST_H

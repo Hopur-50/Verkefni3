@@ -3,7 +3,7 @@
 
 ComputerService::ComputerService()
 {
-    currentOrder = constants::SORT_COMPUTER[0];
+
 }
 
 std::vector<Computer> ComputerService::getAllComputers()
@@ -21,9 +21,9 @@ bool ComputerService::addComputer(Computer computer)
     return computerRepo.addComputer(computer);
 }
 
-bool ComputerService::addRelation(std::string sciName, std::string compName)
+bool ComputerService::updateComputer(Computer computer)
 {
-    return computerRepo.addRelation(sciName, compName);
+    return computerRepo.updateComputer(computer);
 }
 
 std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
@@ -31,7 +31,3 @@ std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
     return computerRepo.getRelatedScientists(name);
 }
 
-void ComputerService::changeSortOrder(int input)
-{
-    currentOrder = constants::SORT_COMPUTER[input - 1];
-}

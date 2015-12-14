@@ -36,3 +36,13 @@ bool Computer::getWasItConstructed() const
 {
     return wasItConstructed;
 }
+
+void Computer::setId(int id)
+{
+   this->id = id;
+}
+
+int Computer::getId() const
+{
+    return id;
+}

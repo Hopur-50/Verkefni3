@@ -13,9 +13,8 @@ public:
     std::vector<Computer> getAllComputers();
     std::vector<Computer> searchForComputers(std::string searchTerm);
     bool addComputer(Computer computer);
-    bool addRelation(std::string sciName, std::string compName);
+    bool updateComputer(Computer computer);
     std::vector<Scientist> getRelatedScientists(std::string name);
-    void changeSortOrder(int input);
 
 private:
     ComputerRepository computerRepo;

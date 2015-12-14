@@ -11,11 +11,6 @@ ComputerRepository::ComputerRepository()
 
 }
 
-ComputerRepository::~ComputerRepository()
-{
-
-}
-
 bool ComputerRepository::addComputer(Computer computer)
 {
     QSqlQuery query;
@@ -47,6 +42,26 @@ bool ComputerRepository::addComputer(Computer computer)
     return query.exec();
 }
 
+bool ComputerRepository::updateComputer(Computer computer)
+{
+    QSqlQuery query;
+
+    std::string name = computer.getName();
+    std::string type = computer.getType();
+    bool wasItConstructed = computer.getWasItConstructed();
+    int yearOfConstruction = computer.getYearOfConstruction();
+    int id = computer.getId();
+
+    query.prepare("UPDATE Computers SET name = :dbname, type = :dbtype, wasItConstructed = :dbwasItConstructed, yearOfConstruction = :dbyearOfConstruction WHERE id = :dbid");
+    query.bindValue(":dbname", QString::fromStdString(name));
+    query.bindValue(":dbtype", QString::fromStdString(type));
+    query.bindValue(":dbwasItConstructed", wasItConstructed);
+    query.bindValue(":dbyearOfConstruction", QString::number(yearOfConstruction));
+    query.bindValue(":dbid", QString::number(id));
+
+    return query.exec();
+}
+
 std::vector<Computer> ComputerRepository::getAllComputers(std::string orderBy)
 {
     std::vector<Computer> computers;
@@ -60,14 +75,19 @@ std::vector<Computer> ComputerRepository::getAllComputers(std::string orderBy)
         std::string type = query.value(1).toString().toStdString();
         bool wasItConstructed = query.value(2).toInt();
         int yearOfConstruction = query.value(3).toInt();
+        int id = query.value(4).toInt();
 
         if (query.value(2) == false)
         {
-            computers.push_back(Computer(name, type, wasItConstructed));
+            Computer compMachine(name, type, wasItConstructed);
+            compMachine.setId(id);
+            computers.push_back(compMachine);
         }
         else
         {
-              computers.push_back(Computer(name, type, wasItConstructed, yearOfConstruction));
+            Computer compMachine(name, type, wasItConstructed, yearOfConstruction);
+            compMachine.setId(id);
+            computers.push_back(compMachine);
         }
     }
 
@@ -92,14 +112,19 @@ std::vector<Computer> ComputerRepository::searchForComputers(std::string searchT
         std::string type = query.value(1).toString().toStdString();
         int wasItConstructed = query.value(2).toInt();
         int yearOfConstruction = query.value(3).toInt();
+        int id = query.value(4).toInt();
 
         if(query.value(2).isNull())
         {
-            foundComputers.push_back(Computer(name, type, wasItConstructed));
+            Computer compMachine(name, type, wasItConstructed);
+            compMachine.setId(id);
+            foundComputers.push_back(compMachine);
         }
         else
         {
-            foundComputers.push_back(Computer(name, type, wasItConstructed, yearOfConstruction));
+            Computer compMachine(name, type, wasItConstructed, yearOfConstruction);
+            compMachine.setId(id);
+            foundComputers.push_back(compMachine);
         }
     }
     return foundComputers;
@@ -143,66 +168,22 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
             }
             int yearBorn = query2.value(2).toInt();
             int yearDied = query2.value(3).toInt();
+            int id = query2.value(4).toInt();
 
             if (query2.value(3).isNull())
             {
-                scientists.push_back(Scientist(name, sex, yearBorn));
+                Scientist sciGuy(name, sex, yearBorn);
+                sciGuy.setId(id);
+                scientists.push_back(sciGuy);
             }
             else
             {
-                scientists.push_back(Scientist(name, sex, yearBorn, yearDied));
+                Scientist sciGuy(name, sex, yearBorn, yearDied);
+                sciGuy.setId(id);
+                scientists.push_back(sciGuy);
             }
         }
     }
     return scientists;
-}
-
-bool ComputerRepository::addRelation(std::string sciName, std::string compName)
-{
-    QSqlQuery query;
-/*
-    std::string name = computer.getName();
-    std::string type = computer.getType();
-    bool wasItConstructed = computer.getWasItConstructed();
-    int IntWasItConstructed = wasItConstructed;
-
-    if (wasItConstructed == false)
-    {
-        query.prepare("INSERT INTO Computers (name, computerType, constructed) VALUES(:dbname,:dbtype,:dbwasItConstructed)");
-        query.bindValue(":dbname", QString::fromStdString(name));
-        query.bindValue(":dbtype", QString::fromStdString(type));
-        query.bindValue(":dbwasItConstructed", QString::number(IntWasItConstructed));
-    }
-    else
-    {
-        int yearOfConstruction = computer.getYearOfConstruction();
-        //std::string queryAdd = "INSERT INTO Computer (name, type, wasItConstructed, yearOfConstruction) VALUES";
-        query.prepare("INSERT INTO Computers (name, computerType, constructed, buildYear) VALUES(:dbname,:dbtype,:dbwasItConstructed,:dbyearOfConstruction)");
-        query.bindValue(":dbname", QString::fromStdString(name));
-        query.bindValue(":dbtype", QString::fromStdString(type));
-        query.bindValue(":dbwasItConstructed", QString::number(IntWasItConstructed));
-        query.bindValue(":dbyearOfConstruction", QString::number(yearOfConstruction));
-    }
-*/
-    query.prepare("SELECT id FROM Computers WHERE name = :dbComputer");
-    query.bindValue(":dbComputer", QString::fromStdString(compName));
-    query.exec();
-    query.next();
-    int cId = query.value(0).toInt();
-    //std::cout << cId << "\n";
-
-    QSqlQuery query2;
-    query2.prepare("SELECT id FROM Scientists WHERE name = :dbScientist");
-    query2.bindValue(":dbScientist", QString::fromStdString(sciName));
-    query2.exec();
-    query2.next();
-    int csId = query2.value(0).toInt();
-    //std::cout << csId << "\n";
-
-    QSqlQuery insertQuery;
-    insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
-    insertQuery.bindValue(":dbCId", QString::number(cId));
-    insertQuery.bindValue(":dbCsId", QString::number(csId));
-    return insertQuery.exec();
 }
 

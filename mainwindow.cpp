@@ -14,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->editComputerButton->setEnabled(false);
+    ui->editScientistButton->setEnabled(false);
+
     displayAllScientists();
     displayAllComputers();
 }
@@ -38,6 +41,7 @@ void MainWindow::displayScientists(vector<Scientist> sci)
     ui->tableScientist->setHorizontalHeaderItem(1, new QTableWidgetItem("Gender"));
     ui->tableScientist->setHorizontalHeaderItem(2, new QTableWidgetItem("Year born"));
     ui->tableScientist->setHorizontalHeaderItem(3, new QTableWidgetItem("Year died"));
+    ui->tableScientist->setHorizontalHeaderItem(4, new QTableWidgetItem("ID"));
 
     for (unsigned int row = 0; row < sci.size(); row++)
     {
@@ -47,14 +51,16 @@ void MainWindow::displayScientists(vector<Scientist> sci)
         QString gender = QString::fromStdString(utils::sexToString(currentSci.getSex()));
         QString yearBorn = QString::number(currentSci.getYearBorn());
         QString yearDied = QString::number(currentSci.getYearDied());
+        QString id = QString::number(currentSci.getId());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
         ui->tableScientist->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableScientist->setItem(row, 1, new QTableWidgetItem(gender));
         ui->tableScientist->setItem(row, 2, new QTableWidgetItem(yearBorn));
         ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
+        ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
     }
-
+    ui->tableScientist->hideColumn(4);
 }
 
 void MainWindow::displayAllComputers()
@@ -78,12 +84,16 @@ void MainWindow::displayComputers(vector<Computer> comp)
         QString name = QString::fromStdString(currentComp.getName());
         QString type = QString::fromStdString(currentComp.getType());
         QString yearBuilt = QString::number(currentComp.getYearOfConstruction());
+        QString id = QString::number(currentComp.getId());
         if (yearBuilt == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearBuilt = "not built";
 
         ui->tableComputer->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableComputer->setItem(row, 1, new QTableWidgetItem(type));
         ui->tableComputer->setItem(row, 2, new QTableWidgetItem(yearBuilt));
+        ui->tableComputer->setItem(row, 3, new QTableWidgetItem(id));
     }
+
+    ui->tableComputer->hideColumn(3);
 
 }
 
@@ -146,6 +156,7 @@ void MainWindow::on_inputFilterComputers_textChanged()
 
 void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
+    ui->editScientistButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
     std::vector<Computer> computers = sciServ.getRelatedComputers(name);
@@ -154,6 +165,7 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
+    ui->editComputerButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);

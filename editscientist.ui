@@ -102,7 +102,7 @@
       </sizepolicy>
      </property>
      <property name="placeholderText">
-      <string>Skip if scientist is still alive</string>
+      <string>Skip if still alive</string>
      </property>
     </widget>
    </item>
