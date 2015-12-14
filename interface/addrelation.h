@@ -2,6 +2,8 @@
 #define ADDRELATION_H
 
 #include <QDialog>
+#include "services/scientistservice.h"
+#include "services/computerservice.h"
 
 namespace Ui {
 class AddRelation;
@@ -15,8 +17,16 @@ public:
     explicit AddRelation(QWidget *parent = 0);
     ~AddRelation();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::AddRelation *ui;
+    void fillScientists();
+    void fillComputers();
+
+    ScientistService sciServ;
+    ComputerService compServ;
 };
 
 #endif // ADDRELATION_H

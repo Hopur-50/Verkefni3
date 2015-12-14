@@ -157,10 +157,10 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
     return scientists;
 }
 
-bool ComputerRepository::addRelation(Scientist scientist, Computer computer)
+bool ComputerRepository::addRelation(std::string sciName, std::string compName)
 {
     QSqlQuery query;
-
+/*
     std::string name = computer.getName();
     std::string type = computer.getType();
     bool wasItConstructed = computer.getWasItConstructed();
@@ -183,21 +183,21 @@ bool ComputerRepository::addRelation(Scientist scientist, Computer computer)
         query.bindValue(":dbwasItConstructed", QString::number(IntWasItConstructed));
         query.bindValue(":dbyearOfConstruction", QString::number(yearOfConstruction));
     }
-
+*/
     query.prepare("SELECT id FROM Computers WHERE name = :dbComputer");
-    query.bindValue(":dbComputer", QString::fromStdString(computer.getName()));
+    query.bindValue(":dbComputer", QString::fromStdString(compName));
     query.exec();
     query.next();
     int cId = query.value(0).toInt();
-    std::cout << cId << "\n";
+    //std::cout << cId << "\n";
 
     QSqlQuery query2;
     query2.prepare("SELECT id FROM Scientists WHERE name = :dbScientist");
-    query2.bindValue(":dbScientist", QString::fromStdString(scientist.getName()));
+    query2.bindValue(":dbScientist", QString::fromStdString(sciName));
     query2.exec();
     query2.next();
     int csId = query2.value(0).toInt();
-    std::cout << csId << "\n";
+    //std::cout << csId << "\n";
 
     QSqlQuery insertQuery;
     insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
