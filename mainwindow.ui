@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1233</width>
-    <height>655</height>
+    <width>1319</width>
+    <height>771</height>
    </rect>
   </property>
   <property name="palette">
@@ -429,66 +429,91 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="allTabs">
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
       </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
+      <property name="movable">
+       <bool>false</bool>
       </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0" colspan="7">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Scientists</string>
+       </attribute>
+       <widget class="QPushButton" name="addNewScientistButton">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>520</y>
+          <width>153</width>
+          <height>26</height>
+         </rect>
         </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
+        <property name="text">
+         <string>Add new</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
+       </widget>
+       <widget class="QPushButton" name="editScientistButton">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>520</y>
+          <width>154</width>
+          <height>26</height>
+         </rect>
         </property>
-       </spacer>
-      </item>
-      <item row="3" column="5">
-       <widget class="QPushButton" name="editComputerButton">
         <property name="text">
          <string>Edit</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QPushButton" name="addRelationsButton">
-        <property name="text">
-         <string>Add relations</string>
+       <widget class="QPushButton" name="deleteScientistButton">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>520</y>
+          <width>153</width>
+          <height>26</height>
+         </rect>
         </property>
-       </widget>
-      </item>
-      <item row="3" column="6">
-       <widget class="QPushButton" name="deleteComputerButton">
         <property name="text">
          <string>Delete</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="0" colspan="3">
+       <widget class="QLineEdit" name="inputFilterScientists">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>474</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Filter scientists</string>
+        </property>
+       </widget>
        <widget class="QTableWidget" name="tableScientist">
         <property name="enabled">
          <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>474</width>
+          <height>450</height>
+         </rect>
         </property>
         <property name="minimumSize">
          <size>
@@ -589,16 +614,72 @@
          </property>
         </column>
        </widget>
-      </item>
-      <item row="1" column="4" colspan="3">
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Computers</string>
+       </attribute>
+       <widget class="QPushButton" name="editComputerButton">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>520</y>
+          <width>153</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="deleteComputerButton">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>520</y>
+          <width>153</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
        <widget class="QLineEdit" name="inputFilterComputers">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>21</y>
+          <width>474</width>
+          <height>25</height>
+         </rect>
+        </property>
         <property name="placeholderText">
          <string>Filter computers</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="4" colspan="3">
+       <widget class="QPushButton" name="addNewComputerButton">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>520</y>
+          <width>153</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add new</string>
+        </property>
+       </widget>
        <widget class="QTableWidget" name="tableComputer">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>474</width>
+          <height>450</height>
+         </rect>
+        </property>
         <property name="minimumSize">
          <size>
           <width>300</width>
@@ -607,6 +688,9 @@
         </property>
         <property name="horizontalScrollBarPolicy">
          <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>true</bool>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -669,78 +753,8 @@
          </property>
         </column>
        </widget>
-      </item>
-      <item row="1" column="0" colspan="3">
-       <widget class="QLineEdit" name="inputFilterScientists">
-        <property name="text">
-         <string/>
-        </property>
-        <property name="placeholderText">
-         <string>Filter scientists</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="deleteScientistButton">
-        <property name="text">
-         <string>Delete</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="addNewScientistButton">
-        <property name="text">
-         <string>Add new</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="editScientistButton">
-        <property name="text">
-         <string>Edit</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="4">
-       <widget class="QPushButton" name="addNewComputerButton">
-        <property name="text">
-         <string>Add new</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="7">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -749,8 +763,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1233</width>
-     <height>22</height>
+     <width>1319</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

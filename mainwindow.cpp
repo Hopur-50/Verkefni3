@@ -124,8 +124,8 @@ void MainWindow::on_deleteComputerButton_clicked()
 
 void MainWindow::on_addRelationsButton_clicked()
 {
-    AddRelation addRel;
-    addRel.exec();
+    //AddRelation addRel;
+    //addRel.exec();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
