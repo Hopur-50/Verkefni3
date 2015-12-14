@@ -38,6 +38,7 @@ void MainWindow::displayScientists(vector<Scientist> sci)
     ui->tableScientist->setHorizontalHeaderItem(1, new QTableWidgetItem("Gender"));
     ui->tableScientist->setHorizontalHeaderItem(2, new QTableWidgetItem("Year born"));
     ui->tableScientist->setHorizontalHeaderItem(3, new QTableWidgetItem("Year died"));
+    ui->tableScientist->setHorizontalHeaderItem(4, new QTableWidgetItem("ID"));
 
     for (unsigned int row = 0; row < sci.size(); row++)
     {
@@ -47,12 +48,16 @@ void MainWindow::displayScientists(vector<Scientist> sci)
         QString gender = QString::fromStdString(utils::sexToString(currentSci.getSex()));
         QString yearBorn = QString::number(currentSci.getYearBorn());
         QString yearDied = QString::number(currentSci.getYearDied());
+        QString id = QString::number(currentSci.getId());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
         ui->tableScientist->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableScientist->setItem(row, 1, new QTableWidgetItem(gender));
         ui->tableScientist->setItem(row, 2, new QTableWidgetItem(yearBorn));
         ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
+        ui->tableScientist->setItem(row, 3, new QTableWidgetItem(id));
+
+        ui->tableScientist->hideColumn(4);
     }
 
 }

@@ -22,6 +22,11 @@ bool ScientistService::addScientist(Scientist scientist)
     return scientistRepo.addScientist(scientist);
 }
 
+bool ScientistService::updateScientist(Scientist scientist)
+{
+    return scientistRepo.updateScientist(scientist);
+}
+
 std::vector<Computer> ScientistService::getRelatedComputers(std::string name)
 {
     return scientistRepo.getRelatedComputers(name);

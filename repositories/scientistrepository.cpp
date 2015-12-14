@@ -46,12 +46,14 @@ bool ScientistRepository::updateScientist(Scientist scientist)
     enum sexType sex = scientist.getSex();
     int yearBorn = scientist.getYearBorn();
     int yearDied = scientist.getYearDied();
+    int id = scientist.getId();
 
     query.prepare("UPDATE Scientists SET name = :dbname, gender = :dbgender, yearOfBirth = :dbyearOfBirth, yearOfDeath = :dbyearOfDeath WHERE id = :dbid");
     query.bindValue(":dbname", QString::fromStdString(name));
     query.bindValue(":dbgender", QString::fromStdString(utils::sexToString(sex)));
     query.bindValue(":dbyearOfBirth", QString::number(yearBorn));
     query.bindValue(":dbyearOfDeath", QString::number(yearDied));
+    query.bindValue(":dbid", QString::number(id));
 
     return query.exec();
 }
