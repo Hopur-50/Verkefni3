@@ -39,6 +39,23 @@ bool ScientistRepository::addScientist(Scientist scientist)
     return query.exec();
 }
 
+bool ScientistRepository::updateScientist(Scientist scientist)
+{
+    QSqlQuery query;
+    std::string name = scientist.getName();
+    enum sexType sex = scientist.getSex();
+    int yearBorn = scientist.getYearBorn();
+    int yearDied = scientist.getYearDied();
+
+    query.prepare("UPDATE Scientists SET name = :dbname, gender = :dbgender, yearOfBirth = :dbyearOfBirth, yearOfDeath = :dbyearOfDeath WHERE id = :dbid");
+    query.bindValue(":dbname", QString::fromStdString(name));
+    query.bindValue(":dbgender", QString::fromStdString(utils::sexToString(sex)));
+    query.bindValue(":dbyearOfBirth", QString::number(yearBorn));
+    query.bindValue(":dbyearOfDeath", QString::number(yearDied));
+
+    return query.exec();
+}
+
 std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy)
 {
     std::vector<Scientist> scientists;
