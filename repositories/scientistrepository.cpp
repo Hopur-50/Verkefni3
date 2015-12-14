@@ -126,14 +126,19 @@ std::vector<Scientist> ScientistRepository::searchForScientists(std::string sear
         }
         int yearBorn = query.value(2).toInt();
         int yearDied = query.value(3).toInt();
+        int id = query.value(4).toInt();
 
         if (query.value(3).isNull())
         {
-            foundScientists.push_back(Scientist(name, sex, yearBorn));
+            Scientist sciGuy(name, sex, yearBorn);
+            sciGuy.setId(id);
+            foundScientists.push_back(sciGuy);
         }
         else
         {
-            foundScientists.push_back(Scientist(name, sex, yearBorn, yearDied));
+            Scientist sciGuy(name, sex, yearBorn, yearDied);
+            sciGuy.setId(id);
+            foundScientists.push_back(sciGuy);
         }
     }
 
@@ -148,18 +153,18 @@ std::vector<Computer> ScientistRepository::getRelatedComputers(std::string name)
     query.bindValue(":dbName", QString::fromStdString(name));
     query.exec();
     query.next();
+
     int scientistId = query.value(0).toInt();
 
     query.prepare("SELECT computersID FROM Relations WHERE scientistsID = :dbCsId");
     query.bindValue(":dbCsId", scientistId);
     query.exec();
 
-    int i = 0;
     QSqlQuery query2;
 
     while(query.next())
     {
-        int cId=query.value(i).toInt();
+        int cId=query.value(0).toInt();
         query2.prepare(QString::fromStdString(constants::SELECT_ALL_COMPUTERS) + " WHERE id = :dbCId");
         query2.bindValue(":dbCId", cId);
         query2.exec();
@@ -185,7 +190,6 @@ std::vector<Computer> ScientistRepository::getRelatedComputers(std::string name)
                 computers.push_back(compMachine);
             }
         }
-        i++;
     }
     return computers;
 }
