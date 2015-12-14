@@ -14,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->editComputerButton->setEnabled(false);
+    ui->editScientistButton->setEnabled(false);
+
     displayAllScientists();
     displayAllComputers();
 }
@@ -153,6 +156,7 @@ void MainWindow::on_inputFilterComputers_textChanged()
 
 void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
+    ui->editScientistButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
     std::vector<Computer> computers = sciServ.getRelatedComputers(name);
@@ -161,6 +165,7 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
+    ui->editComputerButton->setEnabled(true);
     int currentRow = index.row();
     std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
