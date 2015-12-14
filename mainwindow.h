@@ -62,6 +62,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     std::string input_text;
+    int selectedSciRow; //Keeps track of which Scientist is selected from table
+    int selectedCompRow; //Keeps track of which Computer is selected from table
 
     ScientistService sciServ;
     ComputerService compServ;
@@ -70,7 +72,7 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
-    //Scientist getScientist(int index);
+    Scientist getScientist(int id);
 };
 
 #endif // MAINWINDOW_H

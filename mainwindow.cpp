@@ -60,7 +60,7 @@ void MainWindow::displayScientists(vector<Scientist> sci)
         ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
         ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
     }
-    ui->tableScientist->hideColumn(4);
+    //ui->tableScientist->hideColumn(4);
 
     displayedScientists = sci;
 }
@@ -116,9 +116,9 @@ void MainWindow::on_addNewComputerButton_clicked()
 
 void MainWindow::on_editScientistButton_clicked()
 {
-    int currentRow = ui->tableScientist->currentRow();
+    int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     EditScientist editSci;
-    editSci.displayInfo(displayedScientists[currentRow]);
+    editSci.displayInfo(getScientist(sciID));
     editSci.exec();
 }
 
@@ -163,8 +163,8 @@ void MainWindow::on_inputFilterComputers_textChanged()
 void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 {
     ui->editScientistButton->setEnabled(true);
-    int currentRow = index.row();
-    std::string name = ui->tableScientist->item(currentRow, 0)->text().toStdString();
+    selectedSciRow = index.row();
+    std::string name = ui->tableScientist->item(selectedSciRow, 0)->text().toStdString();
     std::vector<Computer> computers = sciServ.getRelatedComputers(name);
     displayComputers(computers);
 }
@@ -172,8 +172,20 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
 {
     ui->editComputerButton->setEnabled(true);
-    int currentRow = index.row();
-    std::string name = ui->tableComputer->item(currentRow, 0)->text().toStdString();
+    selectedCompRow = index.row();
+    std::string name = ui->tableComputer->item(selectedCompRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
     displayScientists(scientists);
+}
+
+Scientist MainWindow::getScientist(int id)
+{
+    for (unsigned int i = 0; i < displayedScientists.size(); i++)
+    {
+        if (id == displayedScientists.at(i).getId())
+        {
+            return displayedScientists.at(i);
+        }
+    }
+    return displayedScientists[0]; //Should not reach this point.
 }
