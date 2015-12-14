@@ -27,15 +27,9 @@ void AddComputer::on_buttonOkCancel_accepted()
     {
         int yearConstructed = ui->lineYearOfConstruction->text().toInt();
         compServ.addComputer(Computer(name, type, true, yearConstructed));
-
-//        QLineEdit::setValidator();
-//        yearConstructed->setValidator( new QIntValidator(0, 2015, this) );
-
-//        QRegExp rx("\\d+");
-//             QLineEdit *edit = new QLineEdit();
-//             edit->setValidator(new QIntValidator(0, 2015, this));
-//             this->setCentralWidget(edit);
     }
+
+
 }
 
 //bool AddComputer::isValid() const
