@@ -59,6 +59,8 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
+;
+
 private:
     Ui::MainWindow *ui;
     std::string input_text;
@@ -67,7 +69,10 @@ private:
     ComputerService compServ;
     BaseService baseServ;
 
+    std::vector<Scientist> displayedScientists;
+    std::vector<Computer> displayedComputers;
 
+    //Scientist getScientist(int index);
 };
 
 #endif // MAINWINDOW_H

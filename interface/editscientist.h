@@ -2,6 +2,8 @@
 #define EDITSCIENTIST_H
 
 #include <QDialog>
+#include <models/scientist.h>
+#include <services/scientistservice.h>
 
 namespace Ui {
 class EditScientist;
@@ -15,8 +17,14 @@ public:
     explicit EditScientist(QWidget *parent = 0);
     ~EditScientist();
 
+    void displayInfo(Scientist sci);
+
+private slots:
+    void on_buttonOkCancel_accepted();
+
 private:
     Ui::EditScientist *ui;
+    ScientistService sciServ;
 };
 
 #endif // EDITSCIENTIST_H
