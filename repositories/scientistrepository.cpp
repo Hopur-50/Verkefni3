@@ -72,13 +72,13 @@ std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy
         std::string sexString = query.value(1).toString().toStdString();
         enum sexType sex;
 
-        if(sexString == "m" || sexString == " m" || sexString == "male" || sexString == " male") //We change sex to string so we can read correctly from the database.
+        if(sexString == "Male" || sexString == "m") //We change sex to string so we can read correctly from the database.
         {
-            sex = male;
+            sex = Male;
         }
         else
         {
-            sex = female;
+            sex = Female;
         }
 
         int yearBorn = query.value(2).toInt();
@@ -118,13 +118,13 @@ std::vector<Scientist> ScientistRepository::searchForScientists(std::string sear
         std::string name = query.value(0).toString().toStdString();
         std::string sexString = query.value(1).toString().toStdString();
         enum sexType sex;
-        if(sexString == "m" || sexString == " m" || sexString == "male" || sexString == " male")
+        if(sexString == "Male" || sexString == "m")
         {
-            sex = male;
+            sex = Male;
         }
         else
         {
-            sex = female;
+            sex = Female;
         }
         int yearBorn = query.value(2).toInt();
         int yearDied = query.value(3).toInt();

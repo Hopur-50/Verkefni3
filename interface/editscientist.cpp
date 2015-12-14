@@ -21,17 +21,19 @@ void EditScientist::displayInfo(Scientist sci)
     ui->lineNameScientist->setText(QString::fromStdString(sci.getName()));
     ui->lineYearOfBirth->setText(QString::number(sci.getYearBorn()));
     ui->lineYearOfDeath->setText(QString::number(sci.getYearDied()));
+
+    sciID = sci.getId();
 }
 
 void EditScientist::on_buttonOkCancel_accepted()
-{/*
+{
     std::string name = ui->lineNameScientist->text().toStdString();
     sexType gender = utils::stringToSex(ui->comboGender->currentText().toStdString());
     int yearBorn = ui->lineYearOfBirth->text().toInt();
     int yearDied = ui->lineYearOfDeath->text().toInt();
 
     Scientist newScientist = Scientist(name, gender, yearBorn, yearDied);
-    newScientist.setId(sci->getId());
+    newScientist.setId(sciID);
 
-    sciServ.updateScientist(newScientist);*/
+    sciServ.updateScientist(newScientist);
 }

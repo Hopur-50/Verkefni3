@@ -120,6 +120,7 @@ void MainWindow::on_editScientistButton_clicked()
     EditScientist editSci;
     editSci.displayInfo(getScientist(sciID));
     editSci.exec();
+    displayAllScientists();
 }
 
 void MainWindow::on_editComputerButton_clicked()

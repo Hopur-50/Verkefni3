@@ -71,25 +71,22 @@ namespace utils
         return stream.str();
     }
 
-    enum sexType intToSex(int number) 
+    sexType intToSex(int number)
     {
-        return static_cast<enum sexType>(number);
+        return static_cast<sexType>(number);
     }
 
-    enum sexType stringToSex(std::string str) 
+    sexType stringToSex(std::string str)
     {
-        return intToSex(stringToInt(str));
+        if (str == "Male") return Male;
+        else if (str == "Female") return Female;
+        else return Other;
     }
 
-    std::string sexToString(enum sexType gender)
+    std::string sexToString(sexType gender)
     {
-        if (gender == male)
-        {
-            return "male";
-        }
-        else
-        {
-            return "female";
-        }
+        if (gender == Male) return "Male";
+        else if (gender == Female) return "Female";
+        else return "Other";
     }
 }

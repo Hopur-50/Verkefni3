@@ -5,8 +5,9 @@
 
 enum sexType
 {
-    female,
-    male
+    Female,
+    Male,
+    Other
 };
                             //All classes are PascalCasing and all functions and variables are camelCasing.
 class Scientist
