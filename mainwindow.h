@@ -13,6 +13,7 @@
 #include <interface/addcomputer.h>
 #include <interface/editscientist.h>
 #include <interface/editcomputer.h>
+#include <interface/addrelation.h>
 
 namespace Ui {
 class MainWindow;
