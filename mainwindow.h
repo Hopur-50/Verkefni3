@@ -59,7 +59,6 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
-;
 
 private:
     Ui::MainWindow *ui;

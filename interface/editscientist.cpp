@@ -15,6 +15,7 @@ EditScientist::~EditScientist()
     delete ui;
 }
 
+
 void EditScientist::displayInfo(Scientist sci)
 {
     ui->comboGender->setCurrentText(QString::fromStdString(utils::sexToString(sci.getSex())));

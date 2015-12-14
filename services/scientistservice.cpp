@@ -27,6 +27,11 @@ bool ScientistService::updateScientist(Scientist scientist)
     return scientistRepo.updateScientist(scientist);
 }
 
+bool ScientistService::deleteScientist(int id)
+{
+    return scientistRepo.deleteScientist(id);
+}
+
 std::vector<Computer> ScientistService::getRelatedComputers(std::string name)
 {
     return scientistRepo.getRelatedComputers(name);

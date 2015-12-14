@@ -47,9 +47,10 @@ HEADERS  += mainwindow.h \
     services/baseservice.h \
     interface/addrelation.h
 
-FORMS    += mainwindow.ui \
+FORMS    += mainwindow.ui\
     editscientist.ui \
     editcomputer.ui \
     addscientist.ui \
     addcomputer.ui \
-    addrelation.ui
+    addrelation.ui \
+

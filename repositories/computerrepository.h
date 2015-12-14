@@ -16,6 +16,7 @@ public:
 
     bool addComputer(Computer computer);
     bool updateComputer(Computer computer);
+    bool deleteComputer(int id);
     std::vector<Computer> getAllComputers(std::string orderBy);
     std::vector<Computer> searchForComputers(std::string searchTerm);
     std::vector<Scientist> getRelatedScientists(std::string name);

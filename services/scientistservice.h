@@ -12,6 +12,7 @@ public:
     std::vector<Scientist> searchForScientists(std::string searchTerm);
     bool addScientist(Scientist scientist);
     bool updateScientist(Scientist scientist);
+    bool deleteScientist(int id);
     std::vector<Computer> getRelatedComputers(std::string name);
 
 private:

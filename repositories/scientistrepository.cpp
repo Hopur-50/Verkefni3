@@ -58,6 +58,19 @@ bool ScientistRepository::updateScientist(Scientist scientist)
     return query.exec();
 }
 
+bool ScientistRepository::deleteScientist(int id)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM Relations WHERE scientistsID = :dbId");
+    query.bindValue(":dbId", id);
+    query.exec();
+
+    QSqlQuery query2;
+    query2.prepare("DELETE FROM Scientists WHERE id = :dbId");
+    query2.bindValue(":dbId", id);
+    return query2.exec();
+}
+
 std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy)
 {
     std::vector<Scientist> scientists;
