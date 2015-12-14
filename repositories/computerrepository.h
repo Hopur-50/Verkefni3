@@ -13,7 +13,6 @@ class ComputerRepository
 {
 public:
     ComputerRepository();
-    ~ComputerRepository();
 
     bool addComputer(Computer computer);
     std::vector<Computer> getAllComputers(std::string orderBy);
