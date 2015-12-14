@@ -31,3 +31,4 @@ void AddScientist::on_buttonOkCancel_accepted()
         sciServ.addScientist(Scientist(name,gender,yearBorn,yearDied));
     }
 }
+
