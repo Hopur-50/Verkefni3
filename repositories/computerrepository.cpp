@@ -42,6 +42,26 @@ bool ComputerRepository::addComputer(Computer computer)
     return query.exec();
 }
 
+bool ComputerRepository::updateComputer(Computer computer)
+{
+    QSqlQuery query;
+
+    std::string name = computer.getName();
+    std::string type = computer.getType();
+    bool wasItConstructed = computer.getWasItConstructed();
+    int yearOfConstruction = computer.getYearOfConstruction();
+    int id = computer.getId();
+
+    query.prepare("UPDATE Computers SET name = :dbname, type = :dbtype, wasItConstructed = :dbwasItConstructed, yearOfConstruction = :dbyearOfConstruction WHERE id = :dbid");
+    query.bindValue(":dbname", QString::fromStdString(name));
+    query.bindValue(":dbtype", QString::fromStdString(type));
+    query.bindValue(":dbwasItConstructed", wasItConstructed);
+    query.bindValue(":dbyearOfConstruction", QString::number(yearOfConstruction));
+    query.bindValue(":dbid", QString::number(id));
+
+    return query.exec();
+}
+
 std::vector<Computer> ComputerRepository::getAllComputers(std::string orderBy)
 {
     std::vector<Computer> computers;

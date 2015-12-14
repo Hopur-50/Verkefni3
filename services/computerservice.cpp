@@ -21,6 +21,11 @@ bool ComputerService::addComputer(Computer computer)
     return computerRepo.addComputer(computer);
 }
 
+bool ComputerService::updateComputer(Computer computer)
+{
+    return computerRepo.updateComputer(computer);
+}
+
 bool ComputerService::addRelation(std::string sciName, std::string compName)
 {
     return computerRepo.addRelation(sciName, compName);
