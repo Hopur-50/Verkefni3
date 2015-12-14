@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     interface/addscientist.cpp \
     interface/editcomputer.cpp \
     interface/editscientist.cpp \
-    services/baseservice.cpp
+    services/baseservice.cpp \
+    interface/addrelation.cpp
 
 HEADERS  += mainwindow.h \
     models/computer.h \
@@ -43,12 +44,12 @@ HEADERS  += mainwindow.h \
     interface/addscientist.h \
     interface/editcomputer.h \
     interface/editscientist.h \
-    services/baseservice.h
+    services/baseservice.h \
+    interface/addrelation.h
 
 FORMS    += mainwindow.ui \
     editscientist.ui \
     editcomputer.ui \
     addscientist.ui \
-    addcomputer.ui
-
-FORMS    += mainwindow.ui
+    addcomputer.ui \
+    addrelation.ui
