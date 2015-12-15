@@ -183,7 +183,7 @@ std::vector<Computer> ScientistRepository::getRelatedComputers(int id)
             std::string type = query2.value(1).toString().toStdString();
             bool wasItConstructed = query2.value(2).toBool();
             int yearOfConstruction = query2.value(3).toInt();
-            int id = query.value(4).toInt();
+            int id = query2.value(4).toInt();
 
             if(query2.value(2).isNull())
             {
