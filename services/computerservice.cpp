@@ -31,8 +31,8 @@ bool ComputerService::deleteComputer(int id)
     return computerRepo.deleteComputer(id);
 }
 
-std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
+std::vector<Scientist> ComputerService::getRelatedScientists(int id)
 {
-    return computerRepo.getRelatedScientists(name);
+    return computerRepo.getRelatedScientists(id);
 }
 

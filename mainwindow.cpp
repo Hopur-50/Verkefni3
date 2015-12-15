@@ -259,8 +259,8 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
     ui->editScientistButton->setEnabled(true);
     ui->deleteScientistButton->setEnabled(true);
     selectedSciRow = index.row();
-    std::string name = ui->tableScientist->item(selectedSciRow, 0)->text().toStdString();
-    std::vector<Computer> computers = sciServ.getRelatedComputers(name);
+    int id = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
+    std::vector<Computer> computers = sciServ.getRelatedComputers(id);
     displayRelatedComputers(computers);
 }
 
@@ -269,8 +269,8 @@ void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
     ui->editComputerButton->setEnabled(true);
     ui->deleteComputerButton->setEnabled(true);
     selectedCompRow = index.row();
-    std::string name = ui->tableComputer->item(selectedCompRow, 0)->text().toStdString();
-    std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
+    int id = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
+    std::vector<Scientist> scientists = compServ.getRelatedScientists(id);
     displayRelatedScientists(scientists);
 }
 

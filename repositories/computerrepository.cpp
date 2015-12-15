@@ -31,7 +31,6 @@ bool ComputerRepository::addComputer(Computer computer)
     else
     {
         int yearOfConstruction = computer.getYearOfConstruction();
-        //std::string queryAdd = "INSERT INTO Computer (name, type, wasItConstructed, yearOfConstruction) VALUES";
         query.prepare("INSERT INTO Computers (name, computerType, constructed, buildYear) VALUES(:dbname,:dbtype,:dbwasItConstructed,:dbyearOfConstruction)");
         query.bindValue(":dbname", QString::fromStdString(name));
         query.bindValue(":dbtype", QString::fromStdString(type));
@@ -52,7 +51,7 @@ bool ComputerRepository::updateComputer(Computer computer)
     int yearOfConstruction = computer.getYearOfConstruction();
     int id = computer.getId();
 
-    query.prepare("UPDATE Computers SET name = :dbname, type = :dbtype, wasItConstructed = :dbwasItConstructed, yearOfConstruction = :dbyearOfConstruction WHERE id = :dbid");
+    query.prepare("UPDATE Computers SET name = :dbname, computerType = :dbtype, constructed = :dbwasItConstructed, buildYear = :dbyearOfConstruction WHERE id = :dbid");
     query.bindValue(":dbname", QString::fromStdString(name));
     query.bindValue(":dbtype", QString::fromStdString(type));
     query.bindValue(":dbwasItConstructed", wasItConstructed);
@@ -144,19 +143,12 @@ std::vector<Computer> ComputerRepository::searchForComputers(std::string searchT
     return foundComputers;
 }
 
-std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name)
+std::vector<Scientist> ComputerRepository::getRelatedScientists(int id)
 {
     QSqlQuery query;
     std::vector<Scientist> scientists;
-    query.prepare("SELECT id FROM Computers WHERE name = :dbName");
-    query.bindValue(":dbName", QString::fromStdString(name));
-    query.exec();
-    query.next();
-
-    int computerId = query.value(0).toInt();
-
     query.prepare("SELECT scientistsID FROM Relations WHERE computersID = :dbCId");
-    query.bindValue(":dbCId", computerId);
+    query.bindValue(":dbCId", id);
     query.exec();
 
     QSqlQuery query2;
@@ -172,7 +164,7 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
             std::string name = query2.value(0).toString().toStdString();
             enum sexType sex;
             std::string sexString = query2.value(1).toString().toStdString();
-            if(sexString == "Male")
+            if(sexString == "Male" || sexString == "m")
             {
                 sex = Male;
             }

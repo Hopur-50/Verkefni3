@@ -18,7 +18,7 @@ public:
     bool deleteComputer(int id);
     std::vector<Computer> getAllComputers(std::string orderBy);
     std::vector<Computer> searchForComputers(std::string searchTerm);
-    std::vector<Scientist> getRelatedScientists(std::string name);
+    std::vector<Scientist> getRelatedScientists(int id);
 
 private:
 
