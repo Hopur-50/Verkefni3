@@ -53,3 +53,27 @@ void AddComputer::on_lineComputerName_textEdited(const QString &arg1)
         ui->labelErrorName->setText("");
     }
 }
+
+void AddComputer::on_lineYearOfConstruction_textChanged(const QString &arg1)
+{
+    if (arg1.toInt() > 2016)
+    {
+            QPalette pal = ui->labelErrorYearConstruct->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            ui->labelErrorYearConstruct->setPalette(pal);
+            ui->labelErrorYearConstruct->setText("Invaid year of construction!");
+    }
+    else if(ui->lineYearOfConstruction->text() == "" || ui->lineYearOfConstruction->text() == " ")
+    {
+        QPalette pal = ui->labelErrorYearConstruct->palette();
+        pal.setColor(QPalette::WindowText, Qt::red);
+        ui->labelErrorYearConstruct->setPalette(pal);
+        ui->labelErrorYearConstruct->setText("Year of construction can't be empty");
+    }
+    else if(ui->lineYearOfConstruction->text() != "")
+    {
+        ui->labelErrorYearConstruct->clear();
+        ui->labelErrorYearConstruct->setText("");
+        ui->buttonOkCancel->setEnabled(true);
+    }
+}
