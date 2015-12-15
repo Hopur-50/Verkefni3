@@ -8,7 +8,6 @@ AddScientist::AddScientist(QWidget *parent) :
     ui(new Ui::AddScientist)
 {
     ui->setupUi(this);
-    ui->buttonOkCancel->setEnabled(false);
 }
 
 AddScientist::~AddScientist()
@@ -45,15 +44,14 @@ void AddScientist::on_lineScientistName_textChanged(const QString &arg1)
 {
     if (arg1 == "" || arg1 == " ")
     {
-            ui->buttonOkCancel->setEnabled(false);
             QPalette pal = ui->label_error_nameSci->palette();
             pal.setColor(QPalette::WindowText, Qt::red);
             ui->label_error_nameSci->setPalette(pal);
             ui->label_error_nameSci->setText("Name can't be empty");
     }
-    else if(arg1 != "")
+    else if(ui->lineScientistName->text() != "")
     {
-        ui->buttonOkCancel->setEnabled(true);
+         ui->label_error_nameSci->setText("");
     }
 }
 
@@ -61,7 +59,6 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
 {
     if (ui->lineYearOfBirth->text().toInt() > 2016)
     {
-            ui->buttonOkCancel->setEnabled(false);
             QPalette pal = ui->labelErrorYearOfBirthSci->palette();
             pal.setColor(QPalette::WindowText, Qt::red);
             ui->labelErrorYearOfBirthSci->setPalette(pal);
@@ -69,10 +66,13 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
     }
     else if(ui->lineYearOfBirth->text() == "" || ui->lineYearOfBirth->text() == " ")
     {
-        ui->buttonOkCancel->setEnabled(false);
         QPalette pal = ui->labelErrorYearOfBirthSci->palette();
         pal.setColor(QPalette::WindowText, Qt::red);
         ui->labelErrorYearOfBirthSci->setPalette(pal);
         ui->labelErrorYearOfBirthSci->setText("Year of birth can't be empty");
+    }
+    else if(ui->lineYearOfBirth->text() != "")
+    {
+         ui->labelErrorYearOfBirthSci->setText("");
     }
 }
