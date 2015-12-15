@@ -1,4 +1,5 @@
 #include "computer.h"
+#include "utilities/utils.h"
 #include "utilities/constants.h"
 
 Computer::Computer(std::string name, std::string type, bool wasItConstructed)

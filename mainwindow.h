@@ -63,7 +63,6 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
-
     void on_buttonAddRelation_clicked();
 
     void on_buttonAddRelation_2_clicked();
@@ -81,6 +80,7 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
+    Computer getComputer(int id);
     Scientist getScientist(int id);
 };
 

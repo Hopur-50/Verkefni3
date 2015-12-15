@@ -32,7 +32,7 @@ void MainWindow::displayAllScientists()
     displayScientists(sciServ.getAllScientists());
 }
 
-void MainWindow::displayScientists(vector<Scientist> sci)
+void MainWindow::displayScientists(std::vector<Scientist> sci)
 {
 
     ui->tableScientist->clear();
@@ -84,13 +84,13 @@ void MainWindow::displayRelatedComputers(std::vector<Computer> comp)
 
         QString name = QString::fromStdString(currentComp.getName());
         QString type = QString::fromStdString(currentComp.getType());
-        QString yearBuilt = QString::number(currentComp.getYearOfConstruction());
+        QString yearOfConstruction = QString::number(currentComp.getYearOfConstruction());
         QString id = QString::number(currentComp.getId());
-        if (yearBuilt == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearBuilt = "not built";
+        if (yearOfConstruction == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearOfConstruction = "not built";
 
         ui->tableRelatedComputers->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableRelatedComputers->setItem(row, 1, new QTableWidgetItem(type));
-        ui->tableRelatedComputers->setItem(row, 2, new QTableWidgetItem(yearBuilt));
+        ui->tableRelatedComputers->setItem(row, 2, new QTableWidgetItem(yearOfConstruction));
         ui->tableRelatedComputers->setItem(row, 3, new QTableWidgetItem(id));
     }
 
@@ -102,7 +102,7 @@ void MainWindow::displayAllComputers()
     displayComputers(compServ.getAllComputers());
 }
 
-void MainWindow::displayComputers(vector<Computer> comp)
+void MainWindow::displayComputers(std::vector<Computer> comp)
 {
     ui->tableComputer->clear();
     ui->tableComputer->setRowCount(comp.size());
@@ -119,19 +119,19 @@ void MainWindow::displayComputers(vector<Computer> comp)
 
         QString name = QString::fromStdString(currentComp.getName());
         QString type = QString::fromStdString(currentComp.getType());
-        QString yearBuilt = QString::number(currentComp.getYearOfConstruction());
+        QString yearOfConstruction = QString::number(currentComp.getYearOfConstruction());
         QString id = QString::number(currentComp.getId());
-        if (yearBuilt == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearBuilt = "not built";
+        if (yearOfConstruction == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearOfConstruction = "not built";
 
         ui->tableComputer->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableComputer->setItem(row, 1, new QTableWidgetItem(type));
-        ui->tableComputer->setItem(row, 2, new QTableWidgetItem(yearBuilt));
+        ui->tableComputer->setItem(row, 2, new QTableWidgetItem(yearOfConstruction));
         ui->tableComputer->setItem(row, 3, new QTableWidgetItem(id));
     }
 
     ui->tableComputer->hideColumn(3);
 
-    displayedComputers = comp;
+  displayedComputers = comp;
 }
 
 void MainWindow::displayRelatedScientists(std::vector<Scientist> sci)
@@ -177,6 +177,7 @@ void MainWindow::on_addNewComputerButton_clicked()
 {
     AddComputer addComp;
     addComp.exec();
+    displayAllComputers();
 }
 
 void MainWindow::on_editScientistButton_clicked()
@@ -190,8 +191,11 @@ void MainWindow::on_editScientistButton_clicked()
 
 void MainWindow::on_editComputerButton_clicked()
 {
+    int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     EditComputer editComp;
+    editComp.displayInfo(getComputer(compID));
     editComp.exec();
+    displayAllComputers();
 }
 
 void MainWindow::on_deleteScientistButton_clicked()
@@ -234,8 +238,8 @@ void MainWindow::on_deleteComputerButton_clicked()
 
 void MainWindow::on_addRelationsButton_clicked()
 {
-    //AddRelation addRel;
-    //addRel.exec();
+    AddRelation addRel;
+    addRel.exec();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
@@ -272,6 +276,18 @@ void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
     std::string name = ui->tableComputer->item(selectedCompRow, 0)->text().toStdString();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(name);
     displayRelatedScientists(scientists);
+}
+
+Computer MainWindow::getComputer(int id)
+{
+    for (unsigned int i = 0; i < displayedComputers.size(); i++)
+    {
+        if (id == displayedComputers.at(i).getId())
+        {
+            return displayedComputers.at(i);
+        }
+    }
+    return displayedComputers[0];
 }
 
 Scientist MainWindow::getScientist(int id)
