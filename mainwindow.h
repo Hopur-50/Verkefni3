@@ -41,7 +41,7 @@ private slots:
 
     void on_deleteComputerButton_clicked();
 
-    void on_addRelationsButton_clicked();
+    //void on_addRelationsButton_clicked();
 
     void displayAllScientists();
 

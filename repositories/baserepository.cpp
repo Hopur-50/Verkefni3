@@ -1,7 +1,18 @@
 #include "baserepository.h"
+#include "utilities/constants.h"
 #include <QDebug>
 
 BaseRepository::BaseRepository()
+{
+    db = getDatabaseConnection();
+}
+
+BaseRepository::~BaseRepository()
+{
+    db.close();
+}
+
+QSqlDatabase BaseRepository::getDatabaseConnection()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "secondDatabase.sqlite";
@@ -9,20 +20,7 @@ BaseRepository::BaseRepository()
 
     db.open();
 
-    if (!db.open())
-        {
-            qDebug() << "Could not connect.";
-        }
-
-        else
-        {
-            qDebug() << "Connection established.";
-        }
-}
-
-BaseRepository::~BaseRepository()
-{
-    db.close();
+    return db;
 }
 
 bool BaseRepository::addRelation(std::string sciName, std::string compName)

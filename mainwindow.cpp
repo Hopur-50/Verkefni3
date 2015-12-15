@@ -231,13 +231,13 @@ void MainWindow::on_deleteComputerButton_clicked()
         //NAY
     }
 }
-
+/*
 void MainWindow::on_addRelationsButton_clicked()
 {
     //AddRelation addRel;
     //addRel.exec();
 }
-
+*/
 void MainWindow::on_inputFilterScientists_textChanged()
 {
     string userInput = ui->inputFilterScientists->text().toStdString();
