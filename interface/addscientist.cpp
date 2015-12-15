@@ -8,6 +8,7 @@ AddScientist::AddScientist(QWidget *parent) :
     ui(new Ui::AddScientist)
 {
     ui->setupUi(this);
+    ui->buttonOkCancel->setEnabled(false);
 }
 
 AddScientist::~AddScientist()
@@ -39,3 +40,24 @@ void AddScientist::on_buttonOkCancel_accepted()
     }
 }
 
+
+void AddScientist::on_lineScientistName_textChanged(const QString &arg1)
+{
+    if (arg1 == "" || arg1 == " ")
+    {
+            ui->buttonOkCancel->setEnabled(false);
+            QPalette pal = ui->label_error_nameSci->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            ui->label_error_nameSci->setPalette(pal);
+            ui->label_error_nameSci->setText("Name can't be empty");
+    }
+    else if(arg1 != "")
+    {
+        ui->buttonOkCancel->setEnabled(true);
+    }
+}
+
+void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
+{
+
+}

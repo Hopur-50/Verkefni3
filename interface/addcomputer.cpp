@@ -23,11 +23,7 @@ void AddComputer::on_buttonOkCancel_accepted()
     std::string built = ui->comboWasItBuilt->currentText().toStdString();
     int yearConstructed = ui->lineYearOfConstruction->text().toInt();
 
-    if (ui->lineComputerName->text().toStdString() != "" || ui->lineComputerName->text().toStdString() != " ")
-    {
-        QValidator::Acceptable;
-    }
-    else if(ui->lineComputerName->text().toStdString() == "" || ui->lineComputerName->text().toStdString() == " ")
+   if(ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
     {
         QValidator::Invalid;
     }
@@ -63,15 +59,31 @@ bool AddComputer::isValid(QString s, int i) const
 
 void AddComputer::on_lineComputerName_textChanged(const QString &arg1)
 {
-    if (ui->lineComputerName->text().toStdString() != "" || ui->lineComputerName->text().toStdString() != " ")
+    if (arg1 != "" || arg1 != " ")
     {
         ui->buttonOkCancel->setEnabled(true);
     }
-    else if(ui->lineComputerName->text().toStdString() == "" || ui->lineComputerName->text().toStdString() == " ")
+    else if(arg1 == "" || arg1 == " ")
     {
         ui->labelErrorName->setText("Name cannot be empty");
         ui->buttonOkCancel->setEnabled(false);
 
         return;
+    }
+}
+
+void AddComputer::on_lineComputerName_textEdited(const QString &arg1)
+{
+    if (arg1 == "" || arg1 == " ")
+    {
+            ui->buttonOkCancel->setEnabled(false);
+            QPalette pal = ui->labelErrorName->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            ui->labelErrorName->setPalette(pal);
+            ui->labelErrorName->setText("Name can't be empty");
+    }
+    else if(arg1 != "")
+    {
+        ui->buttonOkCancel->setEnabled(true);
     }
 }

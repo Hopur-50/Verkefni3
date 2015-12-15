@@ -20,6 +20,10 @@ public:
 private slots:
     void on_buttonOkCancel_accepted();
 
+    void on_lineScientistName_textChanged(const QString &arg1);
+
+    void on_lineYearOfBirth_textEdited(const QString &arg1);
+
 private:
     Ui::AddScientist *ui;
     ScientistService sciServ;
