@@ -93,6 +93,7 @@ private:
 
     Computer getComputer(int id);
     Scientist getScientist(int id);
+    void refreshTables();
 };
 
 #endif // MAINWINDOW_H
