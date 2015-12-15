@@ -69,7 +69,7 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
 
             if(ui->lineYearOfBirth->text() == "")
             {
-                ui->labelErrorYearOfBirthSci->setText();
+                ui->labelErrorYearOfBirthSci->text();
             }
     }
     else if(ui->lineYearOfBirth->text() == "" || ui->lineYearOfBirth->text() == " ")
