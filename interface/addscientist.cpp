@@ -24,7 +24,7 @@ void AddScientist::on_buttonOkCancel_accepted()
 
     if (ui->lineScientistName->text() == "" || ui->lineScientistName->text() == " ")
     {
-            QValidator::Invalid;
+           return;
     }
     else
     {
@@ -57,7 +57,7 @@ void AddScientist::on_lineScientistName_textChanged(const QString &arg1)
 
 void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
 {
-    if (ui->lineYearOfBirth->text().toInt() > 2016)
+    if (/*ui->lineYearOfBirth->text().toInt()*/ arg1.toInt() > 2016)
     {
             QPalette pal = ui->labelErrorYearOfBirthSci->palette();
             pal.setColor(QPalette::WindowText, Qt::red);
