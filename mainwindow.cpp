@@ -243,6 +243,7 @@ void MainWindow::on_deleteComputerButton_clicked()
     {
         //NAY
     }
+    displayAllComputers();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
@@ -317,4 +318,36 @@ void MainWindow::on_buttonAddRelation2_clicked()
 {
     AddRelation addRel;
     addRel.exec();
+}
+
+void MainWindow::on_tableRelatedScientists_clicked(const QModelIndex &index)
+{
+    ui->removeRelationButtonComp->setEnabled(true);
+    selectedRelSciRow = index.row();
+}
+
+void MainWindow::on_tableRelatedComputers_clicked(const QModelIndex &index)
+{
+    ui->removeRelationButtonSci->setEnabled(true);
+    selectedRelCompRow = index.row();
+}
+
+void MainWindow::on_removeRelationButtonSci_clicked()
+{
+    int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
+    int compID = ui->tableRelatedComputers->item(selectedRelCompRow, 3)->text().toInt();
+    compServ.deleteRelation(compID, sciID);
+    std::vector<Computer> computers = sciServ.getRelatedComputers(sciID);
+    displayRelatedComputers(computers);
+
+}
+
+
+void MainWindow::on_removeRelationButtonComp_clicked()
+{
+    int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
+    int sciID = ui->tableRelatedScientists->item(selectedRelSciRow, 4)->text().toInt();
+    compServ.deleteRelation(compID, sciID);
+    std::vector<Scientist> scientists = compServ.getRelatedScientists(compID);
+    displayRelatedScientists(scientists);
 }

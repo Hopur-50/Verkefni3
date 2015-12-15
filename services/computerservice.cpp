@@ -40,3 +40,8 @@ bool ComputerService::addRelation(int sciID, int compID)
 {
     return computerRepo.addRelation(sciID, compID);
 }
+
+bool ComputerService::deleteRelation(int cId, int csId)
+{
+    return computerRepo.deleteRelation(cId, csId);
+}
