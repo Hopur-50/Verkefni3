@@ -54,3 +54,6 @@ FORMS    += mainwindow.ui\
     addcomputer.ui \
     addrelation.ui \
 
+RESOURCES += \
+    resorses.qrc
+
