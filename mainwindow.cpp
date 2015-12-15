@@ -230,15 +230,9 @@ void MainWindow::on_deleteScientistButton_clicked()
     if (answer == QMessageBox::No) return;
 
     int id = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
-    if(sciServ.deleteScientist(id))
-    {
-        //YAY
-    }
-    else
-    {
-        //NAY
-    }
+    sciServ.deleteScientist(id);
 
+    ui->tableRelatedComputers->clear();
     refreshTables();
 }
 
@@ -248,15 +242,9 @@ void MainWindow::on_deleteComputerButton_clicked()
     if (answer == QMessageBox::No) return;
 
     int id = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
-    if(compServ.deleteComputer(id))
-    {
-        //YAY
-    }
-    else
-    {
-        //NAY
-    }
+    compServ.deleteComputer(id);
 
+    ui->tableRelatedScientists->clear();
     refreshTables();
 }
 
@@ -309,7 +297,7 @@ Computer MainWindow::getComputer(int id)
             return displayedComputers.at(i);
         }
     }
-    return displayedComputers[0];
+    return displayedComputers[0]; //Should not reach this point. Just suppressing warning.
 }
 
 Scientist MainWindow::getScientist(int id)
