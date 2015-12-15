@@ -714,9 +714,9 @@
        <widget class="QPushButton" name="buttonAddRelationSci">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>350</x>
           <y>15</y>
-          <width>131</width>
+          <width>141</width>
           <height>41</height>
          </rect>
         </property>
@@ -979,9 +979,9 @@
        <widget class="QPushButton" name="buttonAddRelationComp">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>350</x>
           <y>15</y>
-          <width>131</width>
+          <width>141</width>
           <height>41</height>
          </rect>
         </property>
