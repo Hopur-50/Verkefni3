@@ -56,6 +56,8 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
         QString id = QString::number(currentSci.getId());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
+        //Sorting must be disabled before inserting items
+        //Otherwise table woll try to sort while inserting which usually fails
         ui->tableScientist->setSortingEnabled(false);
         ui->tableScientist->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableScientist->setItem(row, 1, new QTableWidgetItem(gender));
@@ -64,6 +66,8 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
         ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
         ui->tableScientist->setSortingEnabled(true);
     }
+
+    //We must have access to IDs but do not want to display them
     ui->tableScientist->hideColumn(4);
 
     displayedScientists = sci;
@@ -208,14 +212,11 @@ void MainWindow::on_editComputerButton_clicked()
 
 void MainWindow::on_deleteScientistButton_clicked()
 {
-    int answer = QMessageBox::question(this, "Confirm", "Are you sure you wish to delete the selected scientist?");
-    if (answer == QMessageBox::No)
-    {
-        return;
-    }
+    int answer = QMessageBox::question(this, "Confirm", constants::CONFIRM_DEL_SCIENTIST);
+    if (answer == QMessageBox::No) return;
+
     int id = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
-    bool success = sciServ.deleteScientist(id);
-    if(success)
+    if(sciServ.deleteScientist(id))
     {
         //YAY
     }
@@ -228,14 +229,11 @@ void MainWindow::on_deleteScientistButton_clicked()
 
 void MainWindow::on_deleteComputerButton_clicked()
 {
-    int answer = QMessageBox::question(this, "Confirm", "Are you sure you wish to delete the selected computer?");
-    if (answer == QMessageBox::No)
-    {
-        return;
-    }
+    int answer = QMessageBox::question(this, "Confirm", constants::CONFIRM_DEL_COMPUTER);
+    if (answer == QMessageBox::No) return;
+
     int id = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
-    bool success = compServ.deleteComputer(id);
-    if(success)
+    if(compServ.deleteComputer(id))
     {
         //YAY
     }
@@ -303,7 +301,7 @@ Scientist MainWindow::getScientist(int id)
             return displayedScientists.at(i);
         }
     }
-    return displayedScientists[0]; //Should not reach this point.
+    return displayedScientists[0]; //Should not reach this point. Just suppressing warning.
 }
 
 

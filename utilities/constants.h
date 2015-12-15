@@ -7,13 +7,15 @@
  * This file contains constants that this application uses
  */
 
-namespace constants                             //All constants have snake_casing names with capital letters
+//All constants have snake_casing names with capital letters
+namespace constants
 {
     const int YEAR_DIED_DEFAULT_VALUE = 0;
     const int YEAR_OF_CONSTRUCTION_VALUE = 0;
     const std::string SELECT_ALL_SCIENTISTS = "SELECT name, gender, yearOfBirth, yearOfDeath, id FROM Scientists s";
     const std::string SELECT_ALL_COMPUTERS = "SELECT name, computerType, constructed, buildYear, id FROM Computers c";
-    const QString CONNECTION_NAME = "rainbow_connection";
+    const QString CONFIRM_DEL_COMPUTER = "Are you sure you wish to delete the selected computer?";
+    const QString CONFIRM_DEL_SCIENTIST = "Are you sure you wish to delete the selected scientist?";
 }
 
 #endif // CONSTANTS_H

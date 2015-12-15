@@ -18,9 +18,10 @@ EditComputer::~EditComputer()
 void EditComputer::displayInfo(Computer comp)
 {
     ui->lineNameComputer->setText(QString::fromStdString(comp.getName()));
-    ui->comboWasItBuilt->setCurrentText(QString::number(comp.getWasItConstructed()));
     ui->comboType->setCurrentText(QString::fromStdString(comp.getType()));
     ui->lineYearOfConstruction->setText(QString::number(comp.getYearOfConstruction()));
+    if (comp.getWasItConstructed()) ui->comboWasItBuilt->setCurrentText("Yes");
+    else ui->comboWasItBuilt->setCurrentText("No");
 
     compID = comp.getId();
 }
