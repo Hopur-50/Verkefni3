@@ -2,7 +2,6 @@
 #define COMPUTERSERVICE_H
 
 #include "repositories/computerrepository.h"
-#include "models/scientist.h"
 #include "utilities/constants.h"
 
 class ComputerService

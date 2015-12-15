@@ -6,7 +6,6 @@
 
 #include "models/computer.h"
 #include "models/scientist.h"
-
 #include <QtSql>
 
 class ComputerRepository

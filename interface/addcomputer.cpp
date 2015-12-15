@@ -1,5 +1,7 @@
 #include "addcomputer.h"
 #include "ui_addcomputer.h"
+#include "utilities/constants.h"
+#include "utilities/utils.h"
 
 AddComputer::AddComputer(QWidget *parent) :
     QDialog(parent),
