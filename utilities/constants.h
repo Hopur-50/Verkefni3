@@ -3,11 +3,11 @@
 
 #include <string>
 #include <QtSql>
-/**
- * This file contains constants that this application uses
- */
 
-//All constants have snake_casing names with capital letters
+// This file contains constants that this application uses
+
+
+// All constants have snake_casing names with capital letters
 namespace constants
 {
     const int YEAR_DIED_DEFAULT_VALUE = 0;

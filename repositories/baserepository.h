@@ -12,7 +12,7 @@
 class BaseRepository
 {
 public:
-    BaseRepository();
+     BaseRepository();
     ~BaseRepository();
 
 private:
