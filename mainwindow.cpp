@@ -182,14 +182,16 @@ void MainWindow::on_addNewScientistButton_clicked()
 {
     AddScientist addSci;
     addSci.exec();
-    displayAllScientists();
+
+    refreshTables();
 }
 
 void MainWindow::on_addNewComputerButton_clicked()
 {
     AddComputer addComp;
     addComp.exec();
-    displayAllComputers();
+
+    refreshTables();
 }
 
 void MainWindow::on_editScientistButton_clicked()
@@ -198,9 +200,8 @@ void MainWindow::on_editScientistButton_clicked()
     EditScientist editSci;
     editSci.displayInfo(getScientist(sciID));
     editSci.exec();
-    displayAllScientists();
-    ui->editScientistButton->setEnabled(false);
-    ui->deleteScientistButton->setEnabled(false);
+
+    refreshTables();
 }
 
 void MainWindow::on_editComputerButton_clicked()
@@ -209,9 +210,8 @@ void MainWindow::on_editComputerButton_clicked()
     EditComputer editComp;
     editComp.displayInfo(getComputer(compID));
     editComp.exec();
-    displayAllComputers();
-    ui->editScientistButton->setEnabled(false);
-    ui->deleteScientistButton->setEnabled(false);
+
+    refreshTables();
 }
 
 void MainWindow::on_deleteScientistButton_clicked()
@@ -228,9 +228,8 @@ void MainWindow::on_deleteScientistButton_clicked()
     {
         //NAY
     }
-    displayAllScientists();
-    ui->editScientistButton->setEnabled(false);
-    ui->deleteScientistButton->setEnabled(false);
+
+    refreshTables();
 }
 
 void MainWindow::on_deleteComputerButton_clicked()
@@ -247,9 +246,8 @@ void MainWindow::on_deleteComputerButton_clicked()
     {
         //NAY
     }
-    displayAllComputers();
-    ui->editScientistButton->setEnabled(false);
-    ui->deleteScientistButton->setEnabled(false);
+
+    refreshTables();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
@@ -276,6 +274,8 @@ void MainWindow::on_tableScientist_clicked(const QModelIndex &index)
     int id = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     std::vector<Computer> computers = sciServ.getRelatedComputers(id);
     displayRelatedComputers(computers);
+
+    ui->removeRelationButtonSci->setEnabled(false);
 }
 
 void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
@@ -286,6 +286,8 @@ void MainWindow::on_tableComputer_clicked(const QModelIndex &index)
     int id = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     std::vector<Scientist> scientists = compServ.getRelatedScientists(id);
     displayRelatedScientists(scientists);
+
+    ui->removeRelationButtonComp->setEnabled(false);
 }
 
 Computer MainWindow::getComputer(int id)
@@ -312,18 +314,20 @@ Scientist MainWindow::getScientist(int id)
     return displayedScientists[0]; //Should not reach this point. Just suppressing warning.
 }
 
-
-
 void MainWindow::on_buttonAddRelation_clicked()
 {
     AddRelation addRel;
     addRel.exec();
+
+    refreshTables();
 }
 
 void MainWindow::on_buttonAddRelation2_clicked()
 {
     AddRelation addRel;
     addRel.exec();
+
+    refreshTables();
 }
 
 void MainWindow::on_tableRelatedScientists_clicked(const QModelIndex &index)
@@ -345,10 +349,8 @@ void MainWindow::on_removeRelationButtonSci_clicked()
     compServ.deleteRelation(compID, sciID);
     std::vector<Computer> computers = sciServ.getRelatedComputers(sciID);
     displayRelatedComputers(computers);
-    ui->editScientistButton->setEnabled(false);
-    ui->deleteScientistButton->setEnabled(false);
-    ui->removeRelationButtonSci->setEnabled(false);
 
+    refreshTables();
 }
 
 
@@ -359,7 +361,22 @@ void MainWindow::on_removeRelationButtonComp_clicked()
     compServ.deleteRelation(compID, sciID);
     std::vector<Scientist> scientists = compServ.getRelatedScientists(compID);
     displayRelatedScientists(scientists);
+
+    refreshTables();
+}
+
+void MainWindow::refreshTables()
+{
+    ui->inputFilterScientists->setText("");
+    displayAllScientists();
     ui->editScientistButton->setEnabled(false);
     ui->deleteScientistButton->setEnabled(false);
+
+    ui->inputFilterComputers->setText("");
+    displayAllComputers();
+    ui->editComputerButton->setEnabled(false);
+    ui->deleteComputerButton->setEnabled(false);
+
     ui->removeRelationButtonComp->setEnabled(false);
+    ui->removeRelationButtonSci->setEnabled(false);
 }
