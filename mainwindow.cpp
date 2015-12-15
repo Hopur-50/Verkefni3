@@ -102,7 +102,7 @@ void MainWindow::displayRelatedComputers(std::vector<Computer> comp)
         ui->tableRelatedComputers->setSortingEnabled(true);
     }
 
-  //  ui->tableRelatedComputers->hideColumn(3);
+    ui->tableRelatedComputers->hideColumn(3);
 }
 
 void MainWindow::displayAllComputers()
@@ -175,7 +175,7 @@ void MainWindow::displayRelatedScientists(std::vector<Scientist> sci)
         ui->tableRelatedScientists->setItem(row, 4, new QTableWidgetItem(id));
         ui->tableRelatedScientists->setSortingEnabled(true);
     }
-   // ui->tableRelatedScientists->hideColumn(4);
+    ui->tableRelatedScientists->hideColumn(4);
 }
 
 void MainWindow::on_addNewScientistButton_clicked()
