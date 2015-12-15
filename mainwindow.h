@@ -69,8 +69,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     std::string input_text;
-    int selectedSciRow; //Keeps track of which Scientist is selected from table
-    int selectedCompRow; //Keeps track of which Computer is selected from table
+
+    //Keeps track of which items are selected in the tables
+    int selectedSciRow;
+    int selectedCompRow;
 
     ScientistService sciServ;
     ComputerService compServ;

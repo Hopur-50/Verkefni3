@@ -9,7 +9,8 @@ enum sexType
     Male,
     Other
 };
-                            //All classes are PascalCasing and all functions and variables are camelCasing.
+
+//All classes are PascalCasing and all functions and variables are camelCasing.
 class Scientist
 {
 public:
