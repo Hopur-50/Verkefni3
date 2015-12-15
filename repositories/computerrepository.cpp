@@ -201,3 +201,22 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
     return scientists;
 }
 
+bool ComputerRepository::addRelation(int sciID, int compID)
+{
+    QSqlQuery insertQuery;
+    insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
+    insertQuery.bindValue(":dbCId", QString::number(compID));
+    insertQuery.bindValue(":dbCsId", QString::number(sciID));
+
+    return insertQuery.exec();
+}
+
+bool ComputerRepository::deleteRelation(int cId, int csId)
+{
+    QSqlQuery deleteQuery;
+    deleteQuery.prepare("DELETE FROM Relations WHERE computersID = :cId AND scientistsID = :csId");
+    deleteQuery.bindValue(":cId", QString::number(cId));
+    deleteQuery.bindValue(":csId", QString::number(csId));
+
+    return deleteQuery.exec();
+}

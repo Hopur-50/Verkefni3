@@ -41,8 +41,6 @@ private slots:
 
     void on_deleteComputerButton_clicked();
 
-    //void on_addRelationsButton_clicked();
-
     void displayAllScientists();
 
     void displayScientists(std::vector<Scientist> sci);
@@ -66,7 +64,7 @@ private slots:
 
     void on_buttonAddRelation_clicked();
 
-    void on_buttonAddRelation_2_clicked();
+    void on_buttonAddRelation2_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -81,6 +79,7 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
+    Computer getComputer(int id);
     Scientist getScientist(int id);
 };
 

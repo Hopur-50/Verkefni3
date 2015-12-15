@@ -1,6 +1,7 @@
 #include "addrelation.h"
 #include "ui_addrelation.h"
 
+
 AddRelation::AddRelation(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddRelation)
@@ -39,8 +40,15 @@ void AddRelation::fillComputers()
 
 void AddRelation::on_buttonBox_accepted()
 {
-    std::string sciName = ui->comboSelectScientist->currentText().toStdString();
-    std::string compName = ui->comboSelectComputer->currentText().toStdString();
 
-    baseServ.addRelation(sciName, compName);
+    std::vector<Scientist> scientists = sciServ.getAllScientists();
+    std::vector<Computer> computers = compServ.getAllComputers();
+
+    int sciIndex = ui->comboSelectScientist->currentIndex();
+    int compIndex = ui->comboSelectComputer->currentIndex();
+
+    int sciID = scientists[sciIndex].getId();
+    int compID = computers[compIndex].getId();
+
+    compServ.addRelation(sciID, compID);
 }

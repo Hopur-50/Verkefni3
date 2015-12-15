@@ -6,7 +6,6 @@
 
 #include "models/computer.h"
 #include "models/scientist.h"
-
 #include <QtSql>
 
 class ComputerRepository
@@ -21,6 +20,8 @@ public:
     std::vector<Computer> searchForComputers(std::string searchTerm);
     std::vector<Scientist> getRelatedScientists(std::string name);
 
+    bool addRelation(int sciID, int compID);
+    bool deleteRelation(int cId, int csId);
 private:
 
 };

@@ -4,7 +4,6 @@
 #include <QDialog>
 #include "services/scientistservice.h"
 #include "services/computerservice.h"
-#include "services/baseservice.h"
 
 namespace Ui {
 class AddRelation;
@@ -28,7 +27,6 @@ private:
 
     ScientistService sciServ;
     ComputerService compServ;
-    BaseService baseServ;
 };
 
 #endif // ADDRELATION_H

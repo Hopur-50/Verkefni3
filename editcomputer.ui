@@ -39,7 +39,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="comboType">
      <item>
       <property name="text">
        <string>Electronic</string>

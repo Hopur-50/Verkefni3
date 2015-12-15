@@ -1,5 +1,5 @@
 #include "services/computerservice.h"
-#include<iostream>
+#include <iostream>
 
 ComputerService::ComputerService()
 {
@@ -36,3 +36,7 @@ std::vector<Scientist> ComputerService::getRelatedScientists(std::string name)
     return computerRepo.getRelatedScientists(name);
 }
 
+bool ComputerService::addRelation(int sciID, int compID)
+{
+    return computerRepo.addRelation(sciID, compID);
+}

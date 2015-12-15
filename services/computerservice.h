@@ -2,7 +2,6 @@
 #define COMPUTERSERVICE_H
 
 #include "repositories/computerrepository.h"
-#include "models/scientist.h"
 #include "utilities/constants.h"
 
 class ComputerService
@@ -17,6 +16,7 @@ public:
     bool deleteComputer(int id);
     std::vector<Scientist> getRelatedScientists(std::string name);
 
+    bool addRelation(int sciID, int compID);
 private:
     ComputerRepository computerRepo;
     std::string currentOrder;
