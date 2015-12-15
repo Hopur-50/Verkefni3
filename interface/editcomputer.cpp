@@ -17,8 +17,8 @@ EditComputer::~EditComputer()
 
 void EditComputer::displayInfo(Computer comp)
 {
-    ui->lineComputerName->setText(QString::fromStdString(comp.getName()));
-    ui->comboWasItConstructed->setCurrentText(QString::number(comp.getWasItConstructed()));
+    ui->lineNameComputer->setText(QString::fromStdString(comp.getName()));
+    ui->comboWasItBuilt->setCurrentText(QString::number(comp.getWasItConstructed()));
     ui->comboType->setCurrentText(QString::fromStdString(comp.getType()));
     ui->lineYearOfConstruction->setText(QString::number(comp.getYearOfConstruction()));
 
@@ -27,9 +27,9 @@ void EditComputer::displayInfo(Computer comp)
 
 void EditComputer::on_buttonOkCancel_accepted()
 {
-    std::string name = ui->lineComputerName->text().toStdString();
+    std::string name = ui->lineNameComputer->text().toStdString();
     std::string type = ui->comboType->currentText().toStdString();
-    bool wasItConstructed = ui->comboWasItConstructed->currentText().toInt();
+    bool wasItConstructed = ui->comboWasItBuilt->currentText().toInt();
     int yearOfConstruction = ui->lineYearOfConstruction->text().toInt();
 
     Computer newComputer = Computer(name, type, wasItConstructed, yearOfConstruction);
