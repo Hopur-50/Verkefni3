@@ -36,3 +36,7 @@ std::vector<Scientist> ComputerService::getRelatedScientists(int id)
     return computerRepo.getRelatedScientists(id);
 }
 
+bool ComputerService::addRelation(int sciID, int compID)
+{
+    return computerRepo.addRelation(sciID, compID);
+}

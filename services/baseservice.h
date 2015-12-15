@@ -8,8 +8,6 @@ class BaseService
 public:
     BaseService();
 
-    bool addRelation(int sciID, int compID);
-
 private:
     BaseRepository baseRepo;
 };

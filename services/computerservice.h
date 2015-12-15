@@ -16,6 +16,7 @@ public:
     bool deleteComputer(int id);
     std::vector<Scientist> getRelatedScientists(int id);
 
+    bool addRelation(int sciID, int compID);
 private:
     ComputerRepository computerRepo;
     std::string currentOrder;

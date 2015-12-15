@@ -162,7 +162,7 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(int id)
         while(query2.next())
         {
             std::string name = query2.value(0).toString().toStdString();
-            enum sexType sex;
+            sexType sex;
             std::string sexString = query2.value(1).toString().toStdString();
             if(sexString == "Male" || sexString == "m")
             {
@@ -193,3 +193,22 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(int id)
     return scientists;
 }
 
+bool ComputerRepository::addRelation(int sciID, int compID)
+{
+    QSqlQuery insertQuery;
+    insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
+    insertQuery.bindValue(":dbCId", QString::number(compID));
+    insertQuery.bindValue(":dbCsId", QString::number(sciID));
+
+    return insertQuery.exec();
+}
+
+bool ComputerRepository::deleteRelation(int cId, int csId)
+{
+    QSqlQuery deleteQuery;
+    deleteQuery.prepare("DELETE FROM Relations WHERE computersID = :cId AND scientistsID = :csId");
+    deleteQuery.bindValue(":cId", QString::number(cId));
+    deleteQuery.bindValue(":csId", QString::number(csId));
+
+    return deleteQuery.exec();
+}

@@ -56,11 +56,13 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
         QString id = QString::number(currentSci.getId());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
+        ui->tableScientist->setSortingEnabled(false);
         ui->tableScientist->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableScientist->setItem(row, 1, new QTableWidgetItem(gender));
         ui->tableScientist->setItem(row, 2, new QTableWidgetItem(yearBorn));
         ui->tableScientist->setItem(row, 3, new QTableWidgetItem(yearDied));
         ui->tableScientist->setItem(row, 4, new QTableWidgetItem(id));
+        ui->tableScientist->setSortingEnabled(true);
     }
     ui->tableScientist->hideColumn(4);
 
@@ -88,10 +90,12 @@ void MainWindow::displayRelatedComputers(std::vector<Computer> comp)
         QString id = QString::number(currentComp.getId());
         if (yearOfConstruction == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearOfConstruction = "not built";
 
+        ui->tableRelatedComputers->setSortingEnabled(false);
         ui->tableRelatedComputers->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableRelatedComputers->setItem(row, 1, new QTableWidgetItem(type));
         ui->tableRelatedComputers->setItem(row, 2, new QTableWidgetItem(yearOfConstruction));
         ui->tableRelatedComputers->setItem(row, 3, new QTableWidgetItem(id));
+        ui->tableRelatedComputers->setSortingEnabled(true);
     }
 
     ui->tableRelatedComputers->hideColumn(3);
@@ -123,10 +127,12 @@ void MainWindow::displayComputers(std::vector<Computer> comp)
         QString id = QString::number(currentComp.getId());
         if (yearOfConstruction == QString::number(constants::YEAR_OF_CONSTRUCTION_VALUE)) yearOfConstruction = "not built";
 
+        ui->tableComputer->setSortingEnabled(false);
         ui->tableComputer->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableComputer->setItem(row, 1, new QTableWidgetItem(type));
         ui->tableComputer->setItem(row, 2, new QTableWidgetItem(yearOfConstruction));
         ui->tableComputer->setItem(row, 3, new QTableWidgetItem(id));
+        ui->tableComputer->setSortingEnabled(true);
     }
 
     ui->tableComputer->hideColumn(3);
@@ -157,11 +163,13 @@ void MainWindow::displayRelatedScientists(std::vector<Scientist> sci)
         QString id = QString::number(currentSci.getId());
         if (yearDied == QString::number(constants::YEAR_DIED_DEFAULT_VALUE)) yearDied = "alive";
 
+        ui->tableRelatedScientists->setSortingEnabled(false);
         ui->tableRelatedScientists->setItem(row, 0, new QTableWidgetItem(name));
         ui->tableRelatedScientists->setItem(row, 1, new QTableWidgetItem(gender));
         ui->tableRelatedScientists->setItem(row, 2, new QTableWidgetItem(yearBorn));
         ui->tableRelatedScientists->setItem(row, 3, new QTableWidgetItem(yearDied));
         ui->tableRelatedScientists->setItem(row, 4, new QTableWidgetItem(id));
+        ui->tableRelatedScientists->setSortingEnabled(true);
     }
     ui->tableRelatedScientists->hideColumn(4);
 }
@@ -235,7 +243,6 @@ void MainWindow::on_deleteComputerButton_clicked()
     {
         //NAY
     }
-    displayAllComputers();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()

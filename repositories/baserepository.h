@@ -14,11 +14,10 @@ class BaseRepository
 public:
     BaseRepository();
     ~BaseRepository();
-    bool addRelation(int sciID, int compID);
-    bool deleteRelation(int cId, int csId);
 
 private:
     QSqlDatabase db;
+    QSqlDatabase getDatabaseConnection();
 };
 
 #endif // BASEREPOSITORY_H

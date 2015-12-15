@@ -17,7 +17,7 @@ public:
     Scientist(std::string name, sexType sex, int yearBorn, int yearDied);
 
     std::string getName() const;
-    enum sexType getSex() const;
+    sexType getSex() const;
     int getYearBorn() const;
     int getYearDied() const;
 

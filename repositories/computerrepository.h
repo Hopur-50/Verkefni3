@@ -20,6 +20,8 @@ public:
     std::vector<Computer> searchForComputers(std::string searchTerm);
     std::vector<Scientist> getRelatedScientists(int id);
 
+    bool addRelation(int sciID, int compID);
+    bool deleteRelation(int cId, int csId);
 private:
 
 };

@@ -50,5 +50,5 @@ void AddRelation::on_buttonBox_accepted()
     int sciID = scientists[sciIndex].getId();
     int compID = computers[compIndex].getId();
 
-    baseServ.addRelation(sciID, compID);
+    compServ.addRelation(sciID, compID);
 }
