@@ -24,7 +24,7 @@ void AddComputer::on_buttonOkCancel_accepted()
 
     if (ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
     {
-        QValidator::Invalid;
+        return;
     }
     else
     {
@@ -39,7 +39,7 @@ void AddComputer::on_buttonOkCancel_accepted()
     }
 }
 
-bool AddComputer::isValid(QString s, int i) const
+/*bool AddComputer::isValid(QString s, int i) const
 {
     if (s.isEmpty() || s == " ")
     {
@@ -54,7 +54,7 @@ bool AddComputer::isValid(QString s, int i) const
     {
        return QIntValidator::Invalid;
     }
-}
+}*/
 
 void AddComputer::on_lineComputerName_textEdited(const QString &arg1)
 {
