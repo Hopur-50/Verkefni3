@@ -54,5 +54,15 @@ FORMS    += mainwindow.ui\
     addcomputer.ui \
     addrelation.ui \
 
-RESOURCES +=
+RESOURCES += \
+    icons.qrc
+
+DISTFILES += \
+    noun_18037_cc.png \
+    noun_37595_cc.png \
+    noun_70751_cc.png \
+    noun_89047.png \
+    noun_125677_cc.png \
+    noun_141666_cc.png \
+    noun_155140_cc.png
 
