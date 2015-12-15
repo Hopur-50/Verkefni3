@@ -6,7 +6,7 @@ BaseService::BaseService()
 }
 
 
-bool BaseService::addRelation(std::string sciName, std::string compName)
+bool BaseService::addRelation(int sciID, int compID)
 {
-    return baseRepo.addRelation(sciName, compName);
+    return baseRepo.addRelation(sciID, compID);
 }

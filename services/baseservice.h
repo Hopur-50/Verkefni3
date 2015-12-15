@@ -8,7 +8,7 @@ class BaseService
 public:
     BaseService();
 
-    bool addRelation(std::string sciName, std::string compName);
+    bool addRelation(int sciID, int compID);
 
 private:
     BaseRepository baseRepo;

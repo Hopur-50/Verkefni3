@@ -211,6 +211,7 @@ void MainWindow::on_deleteScientistButton_clicked()
     {
         //NAY
     }
+    displayAllScientists();
 }
 
 void MainWindow::on_deleteComputerButton_clicked()

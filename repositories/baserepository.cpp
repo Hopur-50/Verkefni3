@@ -25,27 +25,12 @@ BaseRepository::~BaseRepository()
     db.close();
 }
 
-bool BaseRepository::addRelation(std::string sciName, std::string compName)
+bool BaseRepository::addRelation(int sciID, int compID)
 {
-    QSqlQuery query;
-
-    query.prepare("SELECT id FROM Computers WHERE name = :dbComputer");
-    query.bindValue(":dbComputer", QString::fromStdString(compName));
-    query.exec();
-    query.next();
-    int cId = query.value(0).toInt();
-
-    QSqlQuery query2;
-    query2.prepare("SELECT id FROM Scientists WHERE name = :dbScientist");
-    query2.bindValue(":dbScientist", QString::fromStdString(sciName));
-    query2.exec();
-    query2.next();
-    int csId = query2.value(0).toInt();
-
     QSqlQuery insertQuery;
     insertQuery.prepare("INSERT INTO Relations (computersID, scientistsID) VALUES (:dbCId, :dbCsId)");
-    insertQuery.bindValue(":dbCId", QString::number(cId));
-    insertQuery.bindValue(":dbCsId", QString::number(csId));
+    insertQuery.bindValue(":dbCId", QString::number(compID));
+    insertQuery.bindValue(":dbCsId", QString::number(sciID));
 
     return insertQuery.exec();
 }
