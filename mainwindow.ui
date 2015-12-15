@@ -430,7 +430,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QTabWidget" name="allTabs">
       <property name="focusPolicy">
        <enum>Qt::ClickFocus</enum>
@@ -883,13 +883,6 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QToolButton" name="toolButton">
-      <property name="text">
-       <string>...</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -912,8 +905,8 @@
    <addaction name="actionAddScientist2"/>
    <addaction name="actionAddComputer"/>
    <addaction name="actionEdit"/>
+   <addaction name="actionDelete4"/>
    <addaction name="actionAddRelations"/>
-   <addaction name="actionTrash"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAddRelations">
@@ -961,13 +954,13 @@
     <string>addScientist2</string>
    </property>
   </action>
-  <action name="actionTrash">
+  <action name="actionDelete4">
    <property name="icon">
     <iconset resource="resorses.qrc">
-     <normaloff>:/icons/noun_54981_cc.png</normaloff>:/icons/noun_54981_cc.png</iconset>
+     <normaloff>:/icons/noun_37595_cc.png</normaloff>:/icons/noun_37595_cc.png</iconset>
    </property>
    <property name="text">
-    <string>trash</string>
+    <string>delete4</string>
    </property>
   </action>
  </widget>
