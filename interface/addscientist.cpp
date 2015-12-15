@@ -59,5 +59,20 @@ void AddScientist::on_lineScientistName_textChanged(const QString &arg1)
 
 void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
 {
-
+    if (ui->lineYearOfBirth->text().toInt() > 2016)
+    {
+            ui->buttonOkCancel->setEnabled(false);
+            QPalette pal = ui->labelErrorYearOfBirthSci->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            ui->labelErrorYearOfBirthSci->setPalette(pal);
+            ui->labelErrorYearOfBirthSci->setText("Scientist has to be born");
+    }
+    else if(ui->lineYearOfBirth->text() == "" || ui->lineYearOfBirth->text() == " ")
+    {
+        ui->buttonOkCancel->setEnabled(false);
+        QPalette pal = ui->labelErrorYearOfBirthSci->palette();
+        pal.setColor(QPalette::WindowText, Qt::red);
+        ui->labelErrorYearOfBirthSci->setPalette(pal);
+        ui->labelErrorYearOfBirthSci->setText("Year of birth can't be empty");
+    }
 }
