@@ -1,5 +1,8 @@
 #include "services/computerservice.h"
+
 #include <iostream>
+
+//This layer works as a medium between the interface and the database
 
 ComputerService::ComputerService()
 {

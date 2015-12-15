@@ -6,6 +6,8 @@
 #include <iostream>
 #include <sstream>
 
+//Transfers information to and from the database
+
 ComputerRepository::ComputerRepository()
 {
 
@@ -90,7 +92,7 @@ std::vector<Computer> ComputerRepository::getAllComputers(std::string orderBy)
         int yearOfConstruction = query.value(3).toInt();
         int id = query.value(4).toInt();
 
-        if (query.value(2) == false)
+        if (query.value(2) == false) // Checks whether the computer was constructed
         {
             Computer compMachine(name, type, wasItConstructed);
             compMachine.setId(id);
@@ -127,7 +129,7 @@ std::vector<Computer> ComputerRepository::searchForComputers(std::string searchT
         int yearOfConstruction = query.value(3).toInt();
         int id = query.value(4).toInt();
 
-        if(query.value(2).isNull())
+        if(query.value(2).isNull()) //Checks whether the computer was constructed
         {
             Computer compMachine(name, type, wasItConstructed);
             compMachine.setId(id);
@@ -176,7 +178,7 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(int id)
             int yearDied = query2.value(3).toInt();
             int id = query2.value(4).toInt();
 
-            if (query2.value(3).isNull())
+            if (query2.value(3).isNull()) //Checks whether the scientist is alive
             {
                 Scientist sciGuy(name, sex, yearBorn);
                 sciGuy.setId(id);

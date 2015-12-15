@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+//This layer works as a medium between the interface and the database
+
 ScientistService::ScientistService()
 {
 
