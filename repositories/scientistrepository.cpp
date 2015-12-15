@@ -17,7 +17,7 @@ bool ScientistRepository::addScientist(Scientist scientist)
     QSqlQuery query;
 
     std::string name = scientist.getName();
-    enum sexType sex = scientist.getSex();
+    sexType sex = scientist.getSex();
     int yearBorn = scientist.getYearBorn();
     int yearDied = scientist.getYearDied();
 
@@ -43,7 +43,7 @@ bool ScientistRepository::updateScientist(Scientist scientist)
 {
     QSqlQuery query;
     std::string name = scientist.getName();
-    enum sexType sex = scientist.getSex();
+    sexType sex = scientist.getSex();
     int yearBorn = scientist.getYearBorn();
     int yearDied = scientist.getYearDied();
     int id = scientist.getId();
@@ -83,7 +83,7 @@ std::vector<Scientist> ScientistRepository::getAllScientists(std::string orderBy
 
         std::string name = query.value(0).toString().toStdString();
         std::string sexString = query.value(1).toString().toStdString();
-        enum sexType sex;
+        sexType sex;
 
         if(sexString == "Male" || sexString == "m") //We change sex to string so we can read correctly from the database.
         {
@@ -130,7 +130,7 @@ std::vector<Scientist> ScientistRepository::searchForScientists(std::string sear
     {
         std::string name = query.value(0).toString().toStdString();
         std::string sexString = query.value(1).toString().toStdString();
-        enum sexType sex;
+        sexType sex;
         if(sexString == "Male" || sexString == "m")
         {
             sex = Male;

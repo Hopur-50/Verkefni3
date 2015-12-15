@@ -170,7 +170,7 @@ std::vector<Scientist> ComputerRepository::getRelatedScientists(std::string name
         while(query2.next())
         {
             std::string name = query2.value(0).toString().toStdString();
-            enum sexType sex;
+            sexType sex;
             std::string sexString = query2.value(1).toString().toStdString();
             if(sexString == "Male")
             {

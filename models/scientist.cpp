@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Scientist::Scientist(string name, enum sexType sex, int yearBorn)
+Scientist::Scientist(string name, sexType sex, int yearBorn)
 {
     this->name = name;
     this->sex = sex;
@@ -12,7 +12,7 @@ Scientist::Scientist(string name, enum sexType sex, int yearBorn)
     this->yearDied = constants::YEAR_DIED_DEFAULT_VALUE;  //If the computer scientist is alive.
 }
 
-Scientist::Scientist(string name, enum sexType sex, int yearBorn, int yearDied)
+Scientist::Scientist(string name, sexType sex, int yearBorn, int yearDied)
 {
     this->name = name;
     this->sex = sex;
@@ -25,7 +25,7 @@ std::string Scientist::getName() const
     return name;
 }
 
-enum sexType Scientist::getSex() const
+sexType Scientist::getSex() const
 {
     return sex;
 }
