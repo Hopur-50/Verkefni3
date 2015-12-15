@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <string>
 
-//To include enum sexType
+// To include enum sexType
 #include "models/scientist.h"
 
 namespace utils

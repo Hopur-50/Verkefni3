@@ -77,7 +77,7 @@ private:
     Ui::MainWindow *ui;
     std::string input_text;
 
-    //Keeps track of which items are selected in the tables
+    // Keeps track of which items are selected in the tables
     int selectedSciRow;
     int selectedCompRow;
     int selectedRelSciRow;
@@ -90,7 +90,7 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
-    //Fix to display columns correctly after deleting items
+    // Fix to display columns correctly after deleting items
     const std::vector<Computer> emptyComputer;
     const std::vector<Scientist> emptyScientist;
 

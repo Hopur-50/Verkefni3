@@ -2,8 +2,6 @@
 #define ADDRELATION_H
 
 #include <QDialog>
-//#include "models/scientist.h"
-//#include "models/computer.h"
 #include "services/scientistservice.h"
 #include "services/computerservice.h"
 
