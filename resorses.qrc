@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>noun_157558_cc.png</file>
+        <file>noun_18037_cc.png</file>
+        <file>noun_101607_cc.png</file>
+        <file>noun_42583_cc.png</file>
+        <file>noun_101467_cc.png</file>
+        <file>noun_125677_cc.png</file>
+        <file>noun_141666_cc.png</file>
+        <file>noun_70751_cc.png</file>
+        <file>noun_155140_cc.png</file>
+        <file>noun_89047.png</file>
+        <file>noun_40408_cc.png</file>
+        <file>noun_54981_cc.png</file>
+    </qresource>
+</RCC>
