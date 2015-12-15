@@ -233,6 +233,7 @@ void MainWindow::on_deleteScientistButton_clicked()
     sciServ.deleteScientist(id);
 
     ui->tableRelatedComputers->clear();
+    displayRelatedComputers(emptyComputer);
     refreshTables();
 }
 
@@ -245,6 +246,7 @@ void MainWindow::on_deleteComputerButton_clicked()
     compServ.deleteComputer(id);
 
     ui->tableRelatedScientists->clear();
+    displayRelatedScientists(emptyScientist);
     refreshTables();
 }
 

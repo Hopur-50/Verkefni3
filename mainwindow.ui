@@ -704,11 +704,6 @@
           <string>Year built</string>
          </property>
         </column>
-        <column>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </column>
        </widget>
        <widget class="QPushButton" name="buttonAddRelationSci">
         <property name="geometry">
@@ -966,11 +961,6 @@
         <column>
          <property name="text">
           <string>Year died</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>ID</string>
          </property>
         </column>
        </widget>

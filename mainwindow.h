@@ -90,6 +90,10 @@ private:
     std::vector<Scientist> displayedScientists;
     std::vector<Computer> displayedComputers;
 
+    //Fix to display columns correctly after deleting items
+    const std::vector<Computer> emptyComputer;
+    const std::vector<Scientist> emptyScientist;
+
     Computer getComputer(int id);
     Scientist getScientist(int id);
     void refreshTables();
