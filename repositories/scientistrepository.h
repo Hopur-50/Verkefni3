@@ -18,7 +18,7 @@ public:
     bool deleteScientist(int id);
     std::vector<Scientist> getAllScientists(std::string orderBy);
     std::vector<Scientist> searchForScientists(std::string searchTerm);
-    std::vector<Computer> getRelatedComputers(std::string name);
+    std::vector<Computer> getRelatedComputers(int id);
 };
 
 #endif // SCIENTISTREPOSITORY_H

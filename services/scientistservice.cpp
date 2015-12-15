@@ -32,9 +32,9 @@ bool ScientistService::deleteScientist(int id)
     return scientistRepo.deleteScientist(id);
 }
 
-std::vector<Computer> ScientistService::getRelatedComputers(std::string name)
+std::vector<Computer> ScientistService::getRelatedComputers(int id)
 {
-    return scientistRepo.getRelatedComputers(name);
+    return scientistRepo.getRelatedComputers(id);
 }
 
 

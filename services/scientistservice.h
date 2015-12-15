@@ -13,7 +13,7 @@ public:
     bool addScientist(Scientist scientist);
     bool updateScientist(Scientist scientist);
     bool deleteScientist(int id);
-    std::vector<Computer> getRelatedComputers(std::string name);
+    std::vector<Computer> getRelatedComputers(int id);
 
 private:
     ScientistRepository scientistRepo;
