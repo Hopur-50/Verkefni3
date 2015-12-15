@@ -436,7 +436,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -462,6 +462,9 @@
         </property>
        </widget>
        <widget class="QPushButton" name="editScientistButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -475,6 +478,9 @@
         </property>
        </widget>
        <widget class="QPushButton" name="deleteScientistButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>200</x>
@@ -704,6 +710,9 @@
         <string>Computers</string>
        </attribute>
        <widget class="QPushButton" name="editComputerButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -717,6 +726,9 @@
         </property>
        </widget>
        <widget class="QPushButton" name="deleteComputerButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>200</x>

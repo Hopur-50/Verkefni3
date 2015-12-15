@@ -199,6 +199,8 @@ void MainWindow::on_editScientistButton_clicked()
     editSci.displayInfo(getScientist(sciID));
     editSci.exec();
     displayAllScientists();
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
 }
 
 void MainWindow::on_editComputerButton_clicked()
@@ -208,6 +210,8 @@ void MainWindow::on_editComputerButton_clicked()
     editComp.displayInfo(getComputer(compID));
     editComp.exec();
     displayAllComputers();
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
 }
 
 void MainWindow::on_deleteScientistButton_clicked()
@@ -225,6 +229,8 @@ void MainWindow::on_deleteScientistButton_clicked()
         //NAY
     }
     displayAllScientists();
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
 }
 
 void MainWindow::on_deleteComputerButton_clicked()
@@ -242,6 +248,8 @@ void MainWindow::on_deleteComputerButton_clicked()
         //NAY
     }
     displayAllComputers();
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
@@ -337,6 +345,9 @@ void MainWindow::on_removeRelationButtonSci_clicked()
     compServ.deleteRelation(compID, sciID);
     std::vector<Computer> computers = sciServ.getRelatedComputers(sciID);
     displayRelatedComputers(computers);
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
+    ui->removeRelationButtonSci->setEnabled(false);
 
 }
 
@@ -348,4 +359,7 @@ void MainWindow::on_removeRelationButtonComp_clicked()
     compServ.deleteRelation(compID, sciID);
     std::vector<Scientist> scientists = compServ.getRelatedScientists(compID);
     displayRelatedScientists(scientists);
+    ui->editScientistButton->setEnabled(false);
+    ui->deleteScientistButton->setEnabled(false);
+    ui->removeRelationButtonComp->setEnabled(false);
 }
