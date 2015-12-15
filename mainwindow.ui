@@ -435,6 +435,9 @@
       <property name="focusPolicy">
        <enum>Qt::ClickFocus</enum>
       </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -453,7 +456,7 @@
          <rect>
           <x>10</x>
           <y>30</y>
-          <width>91</width>
+          <width>101</width>
           <height>26</height>
          </rect>
         </property>
@@ -582,7 +585,7 @@
          <number>0</number>
         </property>
         <attribute name="horizontalHeaderVisible">
-         <bool>false</bool>
+         <bool>true</bool>
         </attribute>
         <attribute name="horizontalHeaderCascadingSectionResizes">
          <bool>true</bool>
@@ -1015,7 +1018,7 @@
      <x>0</x>
      <y>0</y>
      <width>588</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
