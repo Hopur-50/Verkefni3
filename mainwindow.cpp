@@ -352,9 +352,13 @@ void MainWindow::on_tableRelatedComputers_clicked(const QModelIndex &index)
 
 void MainWindow::on_removeRelationButtonSci_clicked()
 {
+    int answer = QMessageBox::question(this, "Confirm", constants::CONFIRM_DEL_RELATION);
+    if (answer == QMessageBox::No) return;
+
     int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     int compID = ui->tableRelatedComputers->item(selectedRelCompRow, 3)->text().toInt();
     compServ.deleteRelation(compID, sciID);
+
     std::vector<Computer> computers = sciServ.getRelatedComputers(sciID);
     displayRelatedComputers(computers);
 
@@ -364,9 +368,13 @@ void MainWindow::on_removeRelationButtonSci_clicked()
 
 void MainWindow::on_removeRelationButtonComp_clicked()
 {
+    int answer = QMessageBox::question(this, "Confirm", constants::CONFIRM_DEL_RELATION);
+    if (answer == QMessageBox::No) return;
+
     int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     int sciID = ui->tableRelatedScientists->item(selectedRelSciRow, 4)->text().toInt();
     compServ.deleteRelation(compID, sciID);
+
     std::vector<Scientist> scientists = compServ.getRelatedScientists(compID);
     displayRelatedScientists(scientists);
 
