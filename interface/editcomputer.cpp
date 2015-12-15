@@ -30,11 +30,22 @@ void EditComputer::on_buttonOkCancel_accepted()
 {
     std::string name = ui->lineNameComputer->text().toStdString();
     std::string type = ui->comboType->currentText().toStdString();
-    bool wasItConstructed = ui->comboWasItBuilt->currentText().toInt();
+    std::string wasItConstructed = ui->comboWasItBuilt->currentText().toStdString();
     int yearOfConstruction = ui->lineYearOfConstruction->text().toInt();
 
-    Computer newComputer = Computer(name, type, wasItConstructed, yearOfConstruction);
-    newComputer.setId(compID);
+    if (wasItConstructed == "Yes")
+    {
+        Computer newComputer = Computer(name, type, true, yearOfConstruction);
+        newComputer.setId(compID);
 
-    compServ.updateComputer(newComputer);
+        compServ.updateComputer(newComputer);
+    }
+    else
+    {
+        Computer newComputer = Computer(name, type, false);
+        newComputer.setId(compID);
+
+        compServ.updateComputer(newComputer);
+    }
+
 }
