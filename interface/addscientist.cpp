@@ -50,9 +50,18 @@ void AddScientist::on_lineScientistName_textChanged(const QString &arg1)
             pal.setColor(QPalette::WindowText, Qt::red);
             ui->label_error_nameSci->setPalette(pal);
             ui->label_error_nameSci->setText("Name can't be empty");
+
+            if(ui->lineScientistName->text().toStdString() != "")
+            {
+                ui->label_error_nameSci->clear();
+                ui->label_error_nameSci->setText("!!");
+                ui->buttonOkCancel->setEnabled(true);
+            }
     }
     else if(arg1 != "")
     {
+        ui->label_error_nameSci->clear();
+        ui->label_error_nameSci->setText("");
         ui->buttonOkCancel->setEnabled(true);
     }
 }
@@ -66,11 +75,6 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
             pal.setColor(QPalette::WindowText, Qt::red);
             ui->labelErrorYearOfBirthSci->setPalette(pal);
             ui->labelErrorYearOfBirthSci->setText("Scientist has to be born");
-
-            if(ui->lineYearOfBirth->text() == "")
-            {
-                ui->labelErrorYearOfBirthSci->text();
-            }
     }
     else if(ui->lineYearOfBirth->text() == "" || ui->lineYearOfBirth->text() == " ")
     {
@@ -80,7 +84,33 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
         ui->labelErrorYearOfBirthSci->setPalette(pal);
         ui->labelErrorYearOfBirthSci->setText("Year of birth can't be empty");
     }
-    else if(arg1 != "")
+    else if(ui->lineYearOfBirth->text() != "")
+    {
+        ui->labelErrorYearOfBirthSci->clear();
+        ui->labelErrorYearOfBirthSci->setText("");
+        ui->buttonOkCancel->setEnabled(true);
+    }
+}
+
+void AddScientist::on_lineScientistName_returnPressed()
+{
+    if (ui->lineScientistName->text().toStdString() == "" || ui->lineScientistName->text().toStdString() == " ")
+    {
+            ui->buttonOkCancel->setEnabled(false);
+            QPalette pal = ui->label_error_nameSci->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            ui->label_error_nameSci->setPalette(pal);
+            ui->label_error_nameSci->setText("Name can't be empty");
+
+            if(ui->lineScientistName->text().toStdString() != "")
+            {
+                ui->label_error_nameSci->clear();
+                ui->label_error_nameSci->setText("");
+                ui->buttonOkCancel->setEnabled(true);
+            }
+
+    }
+    else if(ui->lineScientistName->text().toStdString() != "")
     {
         ui->buttonOkCancel->setEnabled(true);
     }
