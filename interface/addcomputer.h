@@ -19,7 +19,7 @@ public:
 
 private slots:
     void on_buttonOkCancel_accepted();
-
+    void on_lineComputerName_textChanged(const QString &arg1);
 private:
     Ui::AddComputer *ui;
     ComputerService compServ;

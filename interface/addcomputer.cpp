@@ -8,6 +8,7 @@ AddComputer::AddComputer(QWidget *parent) :
     ui(new Ui::AddComputer)
 {
     ui->setupUi(this);
+    ui->buttonOkCancel->setEnabled(false);
 }
 
 AddComputer::~AddComputer()
@@ -22,9 +23,13 @@ void AddComputer::on_buttonOkCancel_accepted()
     std::string built = ui->comboWasItBuilt->currentText().toStdString();
     int yearConstructed = ui->lineYearOfConstruction->text().toInt();
 
-    if (ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
+    if (ui->lineComputerName->text().toStdString() != "" || ui->lineComputerName->text().toStdString() != " ")
     {
-            QValidator::Invalid;  //Eigum við að hafa eitthvað villu message? hvað finnst ykkur? Kv. Sandra
+        QValidator::Acceptable;
+    }
+    else if(ui->lineComputerName->text().toStdString() == "" || ui->lineComputerName->text().toStdString() == " ")
+    {
+        QValidator::Invalid;
     }
     else
     {
@@ -37,15 +42,6 @@ void AddComputer::on_buttonOkCancel_accepted()
             compServ.addComputer(Computer(name, type, true, yearConstructed));
         }
     }
-
-//    if (ui->lineYearOfConstruction > 0 && ui->lineYearOfConstruction < 2016)
-//    {
-//       QIntValidator::Acceptable;
-//    }
-//    else
-//    {
-//       QIntValidator::Invalid;
-//    }
 }
 
 bool AddComputer::isValid(QString s, int i) const
@@ -62,5 +58,20 @@ bool AddComputer::isValid(QString s, int i) const
     else
     {
        return QIntValidator::Invalid;
+    }
+}
+
+void AddComputer::on_lineComputerName_textChanged(const QString &arg1)
+{
+    if (ui->lineComputerName->text().toStdString() != "" || ui->lineComputerName->text().toStdString() != " ")
+    {
+        ui->buttonOkCancel->setEnabled(true);
+    }
+    else if(ui->lineComputerName->text().toStdString() == "" || ui->lineComputerName->text().toStdString() == " ")
+    {
+        ui->labelErrorName->setText("Name cannot be empty");
+        ui->buttonOkCancel->setEnabled(false);
+
+        return;
     }
 }
