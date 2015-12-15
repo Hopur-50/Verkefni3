@@ -436,7 +436,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -686,8 +686,28 @@
         <attribute name="verticalHeaderVisible">
          <bool>false</bool>
         </attribute>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Year built</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
        </widget>
-       <widget class="QPushButton" name="buttonAddRelation">
+       <widget class="QPushButton" name="buttonAddRelationSci">
         <property name="geometry">
          <rect>
           <x>380</x>
@@ -925,8 +945,33 @@
         <attribute name="verticalHeaderVisible">
          <bool>false</bool>
         </attribute>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Year born</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Year died</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
        </widget>
-       <widget class="QPushButton" name="buttonAddRelation2">
+       <widget class="QPushButton" name="buttonAddRelationComp">
         <property name="geometry">
          <rect>
           <x>380</x>
@@ -970,22 +1015,9 @@
      <x>0</x>
      <y>0</y>
      <width>588</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionAddScientist"/>
-   <addaction name="actionAddComputer"/>
-   <addaction name="actionEdit"/>
-   <addaction name="actionDelete"/>
-   <addaction name="actionAddRelations"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAddScientist">
