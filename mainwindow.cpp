@@ -235,6 +235,7 @@ void MainWindow::on_deleteComputerButton_clicked()
     {
         //NAY
     }
+    displayAllComputers();
 }
 
 void MainWindow::on_inputFilterScientists_textChanged()
