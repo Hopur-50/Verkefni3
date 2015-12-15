@@ -33,8 +33,14 @@ void EditScientist::on_buttonOkCancel_accepted()
     int yearBorn = ui->lineYearOfBirth->text().toInt();
     int yearDied = ui->lineYearOfDeath->text().toInt();
 
-    Scientist newScientist = Scientist(name, gender, yearBorn, yearDied);
-    newScientist.setId(sciID);
-
-    sciServ.updateScientist(newScientist);
+    if(name == "" || yearBorn > 2015)
+    {
+        return;
+    }
+    else
+    {
+        Scientist newScientist = Scientist(name, gender, yearBorn, yearDied);
+        newScientist.setId(sciID);
+        sciServ.updateScientist(newScientist);
+    }
 }

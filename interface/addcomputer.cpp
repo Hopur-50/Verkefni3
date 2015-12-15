@@ -39,23 +39,6 @@ void AddComputer::on_buttonOkCancel_accepted()
     }
 }
 
-/*bool AddComputer::isValid(QString s, int i) const
-{
-    if (s.isEmpty() || s == " ")
-    {
-        return QValidator::Invalid;
-    }
-
-    if (i > 0 && i < 2016)
-    {
-       return QIntValidator::Acceptable;
-    }
-    else
-    {
-       return QIntValidator::Invalid;
-    }
-}*/
-
 void AddComputer::on_lineComputerName_textEdited(const QString &arg1)
 {
     if (arg1 == "" || arg1 == " ")

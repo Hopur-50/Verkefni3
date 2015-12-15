@@ -1,6 +1,7 @@
 #include "editcomputer.h"
 #include "ui_editcomputer.h"
 
+#include "utilities/constants.h"
 #include "utilities/utils.h"
 
 EditComputer::EditComputer(QWidget *parent) :
@@ -33,19 +34,26 @@ void EditComputer::on_buttonOkCancel_accepted()
     std::string wasItConstructed = ui->comboWasItBuilt->currentText().toStdString();
     int yearOfConstruction = ui->lineYearOfConstruction->text().toInt();
 
-    if (wasItConstructed == "Yes")
+    if(name == "")
     {
-        Computer newComputer = Computer(name, type, true, yearOfConstruction);
-        newComputer.setId(compID);
-
-        compServ.updateComputer(newComputer);
+        return;
     }
     else
     {
-        Computer newComputer = Computer(name, type, false);
-        newComputer.setId(compID);
+        if (wasItConstructed == "Yes")
+        {
+            Computer newComputer = Computer(name, type, true, yearOfConstruction);
+            newComputer.setId(compID);
 
-        compServ.updateComputer(newComputer);
+            compServ.updateComputer(newComputer);
+        }
+        else
+        {
+            Computer newComputer = Computer(name, type, false);
+            newComputer.setId(compID);
+
+            compServ.updateComputer(newComputer);
+        }
     }
 
 }
