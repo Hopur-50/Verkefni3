@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <string>
 #include <QDebug>
+#include <QHeaderView>
 #include <QMessageBox>
 #include <QMainWindow>
 #include "services/computerservice.h"
@@ -38,6 +39,7 @@ void MainWindow::displayScientists(std::vector<Scientist> sci)
     ui->tableScientist->clear();
     ui->tableScientist->setRowCount(sci.size());
     ui->tableScientist->setColumnCount(5);
+    ui->tableScientist->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
 
     ui->tableScientist->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableScientist->setHorizontalHeaderItem(1, new QTableWidgetItem("Gender"));
@@ -78,6 +80,7 @@ void MainWindow::displayRelatedComputers(std::vector<Computer> comp)
     ui->tableRelatedComputers->clear();
     ui->tableRelatedComputers->setRowCount(comp.size());
     ui->tableRelatedComputers->setColumnCount(4);
+    ui->tableRelatedComputers->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
 
     ui->tableRelatedComputers->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableRelatedComputers->setHorizontalHeaderItem(1, new QTableWidgetItem("Type"));
@@ -115,6 +118,7 @@ void MainWindow::displayComputers(std::vector<Computer> comp)
     ui->tableComputer->clear();
     ui->tableComputer->setRowCount(comp.size());
     ui->tableComputer->setColumnCount(4);
+    ui->tableComputer->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
 
     ui->tableComputer->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableComputer->setHorizontalHeaderItem(1, new QTableWidgetItem("Type"));
@@ -149,6 +153,7 @@ void MainWindow::displayRelatedScientists(std::vector<Scientist> sci)
     ui->tableRelatedScientists->clear();
     ui->tableRelatedScientists->setRowCount(sci.size());
     ui->tableRelatedScientists->setColumnCount(5);
+    ui->tableRelatedScientists->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
 
     ui->tableRelatedScientists->setHorizontalHeaderItem(0, new QTableWidgetItem("Name"));
     ui->tableRelatedScientists->setHorizontalHeaderItem(1, new QTableWidgetItem("Gender"));
