@@ -30,7 +30,7 @@ void AddScientist::on_buttonOkCancel_accepted()
     {
         if (ui->lineYearOfDeath->text() == "" && ui->lineYearOfBirth->text().toInt() < 2016)
         {
-            sciServ.addScientist(Scientist(name,gender, yearBorn));
+            sciServ.addScientist(Scientist(name, gender, yearBorn));
         }
         else if(ui->lineYearOfBirth->text().toInt() < 2016)
         {
