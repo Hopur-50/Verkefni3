@@ -16,6 +16,18 @@ AddRelation::~AddRelation()
     delete ui;
 }
 
+void AddRelation::setComputer(Computer comp)
+{
+    QString name = QString::fromStdString(comp.getName());
+    ui->comboSelectComputer->setCurrentText(name);
+}
+
+void AddRelation::setScientist(Scientist sci)
+{
+    QString name = QString::fromStdString(sci.getName());
+    ui->comboSelectScientist->setCurrentText(name);
+}
+
 void AddRelation::fillScientists()
 {
     std::vector<Scientist> scientists = sciServ.getAllScientists();
