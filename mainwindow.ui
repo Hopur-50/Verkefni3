@@ -435,6 +435,9 @@
       <property name="focusPolicy">
        <enum>Qt::ClickFocus</enum>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 13pt &quot;Andale Mono&quot;;</string>
+      </property>
       <property name="inputMethodHints">
        <set>Qt::ImhNone</set>
       </property>
@@ -455,9 +458,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>30</y>
-          <width>101</width>
-          <height>26</height>
+          <y>15</y>
+          <width>111</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -474,10 +477,10 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>30</y>
+          <x>150</x>
+          <y>15</y>
           <width>81</width>
-          <height>26</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -494,10 +497,10 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>30</y>
+          <x>250</x>
+          <y>15</y>
           <width>91</width>
-          <height>26</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -665,7 +668,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>111</height>
+          <height>131</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -708,10 +711,10 @@
        <widget class="QPushButton" name="buttonAddRelationSci">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>30</y>
-          <width>121</width>
-          <height>26</height>
+          <x>360</x>
+          <y>15</y>
+          <width>131</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -729,9 +732,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>520</y>
+          <y>540</y>
           <width>151</width>
-          <height>32</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -749,10 +752,10 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>30</y>
+          <x>150</x>
+          <y>15</y>
           <width>81</width>
-          <height>26</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -769,10 +772,10 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>30</y>
+          <x>250</x>
+          <y>15</y>
           <width>91</width>
-          <height>26</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -800,9 +803,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>30</y>
-          <width>101</width>
-          <height>26</height>
+          <y>15</y>
+          <width>111</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -922,7 +925,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>111</height>
+          <height>131</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -967,10 +970,10 @@
        <widget class="QPushButton" name="buttonAddRelationComp">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>30</y>
-          <width>121</width>
-          <height>26</height>
+          <x>360</x>
+          <y>15</y>
+          <width>131</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -988,9 +991,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>520</y>
+          <y>540</y>
           <width>151</width>
-          <height>32</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -1008,7 +1011,7 @@
      <x>0</x>
      <y>0</y>
      <width>588</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
