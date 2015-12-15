@@ -436,7 +436,7 @@
        <enum>Qt::ClickFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -564,7 +564,7 @@
          <number>0</number>
         </property>
         <attribute name="horizontalHeaderVisible">
-         <bool>true</bool>
+         <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderCascadingSectionResizes">
          <bool>false</bool>
@@ -644,7 +644,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>131</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -680,6 +680,22 @@
         </property>
         <property name="text">
          <string>Add relation</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="removeRelationButtonSci">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>510</y>
+          <width>151</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Remove relation</string>
         </property>
        </widget>
       </widget>
@@ -845,7 +861,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>131</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -880,6 +896,22 @@
          <string>Add relation</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="removeRelationButtonComp">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>510</y>
+          <width>151</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Remove relation</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -911,7 +943,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAddRelations">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_18037_cc.png</normaloff>:/icons/noun_18037_cc.png</iconset>
    </property>
    <property name="text">
@@ -920,7 +952,7 @@
   </action>
   <action name="actionSearch">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_125677_cc.png</normaloff>:/icons/noun_125677_cc.png</iconset>
    </property>
    <property name="text">
@@ -929,7 +961,7 @@
   </action>
   <action name="actionAddComputer">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_155140_cc.png</normaloff>:/icons/noun_155140_cc.png</iconset>
    </property>
    <property name="text">
@@ -938,7 +970,7 @@
   </action>
   <action name="actionEdit">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_141666_cc.png</normaloff>:/icons/noun_141666_cc.png</iconset>
    </property>
    <property name="text">
@@ -947,7 +979,7 @@
   </action>
   <action name="actionAddScientist2">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_89047.png</normaloff>:/icons/noun_89047.png</iconset>
    </property>
    <property name="text">
@@ -956,7 +988,7 @@
   </action>
   <action name="actionDelete4">
    <property name="icon">
-    <iconset resource="resorses.qrc">
+    <iconset>
      <normaloff>:/icons/noun_37595_cc.png</normaloff>:/icons/noun_37595_cc.png</iconset>
    </property>
    <property name="text">
@@ -965,8 +997,6 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resorses.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

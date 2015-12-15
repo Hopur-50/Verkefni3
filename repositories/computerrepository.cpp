@@ -209,6 +209,5 @@ bool ComputerRepository::deleteRelation(int cId, int csId)
     deleteQuery.prepare("DELETE FROM Relations WHERE computersID = :cId AND scientistsID = :csId");
     deleteQuery.bindValue(":cId", QString::number(cId));
     deleteQuery.bindValue(":csId", QString::number(csId));
-
     return deleteQuery.exec();
 }

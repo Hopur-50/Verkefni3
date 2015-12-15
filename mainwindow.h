@@ -66,6 +66,14 @@ private slots:
 
     void on_buttonAddRelation2_clicked();
 
+    void on_tableRelatedScientists_clicked(const QModelIndex &index);
+
+    void on_tableRelatedComputers_clicked(const QModelIndex &index);
+
+    void on_removeRelationButtonSci_clicked();
+
+    void on_removeRelationButtonComp_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::string input_text;
@@ -73,6 +81,8 @@ private:
     //Keeps track of which items are selected in the tables
     int selectedSciRow;
     int selectedCompRow;
+    int selectedRelSciRow;
+    int selectedRelCompRow;
 
     ScientistService sciServ;
     ComputerService compServ;

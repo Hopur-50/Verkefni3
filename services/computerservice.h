@@ -17,6 +17,7 @@ public:
     std::vector<Scientist> getRelatedScientists(int id);
 
     bool addRelation(int sciID, int compID);
+    bool deleteRelation(int cId, int csId);
 private:
     ComputerRepository computerRepo;
     std::string currentOrder;
