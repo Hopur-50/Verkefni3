@@ -2,6 +2,8 @@
 #define ADDRELATION_H
 
 #include <QDialog>
+//#include "models/scientist.h"
+//#include "models/computer.h"
 #include "services/scientistservice.h"
 #include "services/computerservice.h"
 
@@ -16,6 +18,9 @@ class AddRelation : public QDialog
 public:
     explicit AddRelation(QWidget *parent = 0);
     ~AddRelation();
+
+    void setComputer(Computer comp);
+    void setScientist(Scientist sci);
 
 private slots:
     void on_buttonBox_accepted();

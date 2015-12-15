@@ -16,6 +16,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    selectedCompRow = 0;
+    selectedSciRow = 0;
+    selectedRelCompRow = 0;
+    selectedRelSciRow = 0;
+
     ui->editComputerButton->setEnabled(false);
     ui->editScientistButton->setEnabled(false);
 
@@ -321,7 +326,11 @@ Scientist MainWindow::getScientist(int id)
 
 void MainWindow::on_buttonAddRelation_clicked()
 {
+    int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
+    int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     AddRelation addRel;
+    addRel.setComputer(getComputer(compID));
+    addRel.setScientist(getScientist(sciID));
     addRel.exec();
 
     refreshTables();
@@ -329,7 +338,11 @@ void MainWindow::on_buttonAddRelation_clicked()
 
 void MainWindow::on_buttonAddRelation2_clicked()
 {
+    int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
+    int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
     AddRelation addRel;
+    addRel.setComputer(getComputer(compID));
+    addRel.setScientist(getScientist(sciID));
     addRel.exec();
 
     refreshTables();
