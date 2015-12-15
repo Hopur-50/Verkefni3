@@ -439,7 +439,7 @@
        <set>Qt::ImhNone</set>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -454,7 +454,7 @@
        <widget class="QPushButton" name="addNewScientistButton">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>20</x>
           <y>30</y>
           <width>101</width>
           <height>26</height>
@@ -474,7 +474,7 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>130</x>
           <y>30</y>
           <width>81</width>
           <height>26</height>
@@ -494,7 +494,7 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>220</x>
           <y>30</y>
           <width>91</width>
           <height>26</height>
@@ -585,7 +585,7 @@
          <number>0</number>
         </property>
         <attribute name="horizontalHeaderVisible">
-         <bool>true</bool>
+         <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderCascadingSectionResizes">
          <bool>true</bool>
@@ -665,7 +665,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>101</height>
+          <height>111</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -708,7 +708,7 @@
        <widget class="QPushButton" name="buttonAddRelationSci">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>370</x>
           <y>30</y>
           <width>121</width>
           <height>26</height>
@@ -729,7 +729,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>510</y>
+          <y>520</y>
           <width>151</width>
           <height>32</height>
          </rect>
@@ -749,7 +749,7 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>130</x>
           <y>30</y>
           <width>81</width>
           <height>26</height>
@@ -769,7 +769,7 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>220</x>
           <y>30</y>
           <width>91</width>
           <height>26</height>
@@ -799,7 +799,7 @@
        <widget class="QPushButton" name="addNewComputerButton">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>20</x>
           <y>30</y>
           <width>101</width>
           <height>26</height>
@@ -922,7 +922,7 @@
           <x>20</x>
           <y>400</y>
           <width>471</width>
-          <height>101</height>
+          <height>111</height>
          </rect>
         </property>
         <property name="selectionMode">
@@ -967,7 +967,7 @@
        <widget class="QPushButton" name="buttonAddRelationComp">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>370</x>
           <y>30</y>
           <width>121</width>
           <height>26</height>
@@ -988,7 +988,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>510</y>
+          <y>520</y>
           <width>151</width>
           <height>32</height>
          </rect>
@@ -1008,7 +1008,7 @@
      <x>0</x>
      <y>0</y>
      <width>588</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
