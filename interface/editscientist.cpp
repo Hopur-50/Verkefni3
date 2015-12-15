@@ -33,7 +33,7 @@ void EditScientist::on_buttonOkCancel_accepted()
     int yearBorn = ui->lineYearOfBirth->text().toInt();
     int yearDied = ui->lineYearOfDeath->text().toInt();
 
-    if(name == "" || yearBorn > 2015)
+    if(name == "" || yearBorn > 2015 || ui->lineYearOfBirth->text() == "")
     {
         return;
     }

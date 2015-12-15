@@ -22,7 +22,7 @@ void AddScientist::on_buttonOkCancel_accepted()
     int yearBorn = ui->lineYearOfBirth->text().toInt();
     int yearDied = ui->lineYearOfDeath->text().toInt();
 
-    if (ui->lineScientistName->text() == "" || ui->lineScientistName->text() == " ")
+    if (ui->lineScientistName->text() == "" || ui->lineYearOfBirth->text() == "")
     {
            return;
     }
