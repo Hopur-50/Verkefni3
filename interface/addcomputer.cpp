@@ -8,7 +8,6 @@ AddComputer::AddComputer(QWidget *parent) :
     ui(new Ui::AddComputer)
 {
     ui->setupUi(this);
-    ui->buttonOkCancel->setEnabled(false);
 }
 
 AddComputer::~AddComputer()
@@ -18,13 +17,12 @@ AddComputer::~AddComputer()
 
 void AddComputer::on_buttonOkCancel_accepted()
 {
-    ui->labelErrorName->setText("Name can't be empty");
     std::string name = ui->lineComputerName->text().toStdString();
     std::string type = ui->comboType->currentText().toStdString();
     std::string built = ui->comboWasItBuilt->currentText().toStdString();
     int yearConstructed = ui->lineYearOfConstruction->text().toInt();
 
-   if(ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
+    if (ui->lineComputerName->text() == "" || ui->lineComputerName->text() == " ")
     {
         QValidator::Invalid;
     }
@@ -58,33 +56,17 @@ bool AddComputer::isValid(QString s, int i) const
     }
 }
 
-void AddComputer::on_lineComputerName_textChanged(const QString &arg1)
-{
-    if (arg1 != "" || arg1 != " ")
-    {
-        ui->buttonOkCancel->setEnabled(true);
-    }
-    else if(arg1 == "" || arg1 == " ")
-    {
-        ui->labelErrorName->setText("Name cannot be empty");
-        ui->buttonOkCancel->setEnabled(false);
-
-        return;
-    }
-}
-
 void AddComputer::on_lineComputerName_textEdited(const QString &arg1)
 {
     if (arg1 == "" || arg1 == " ")
     {
-            ui->buttonOkCancel->setEnabled(false);
-            QPalette pal = ui->labelErrorName->palette();
-            pal.setColor(QPalette::WindowText, Qt::red);
-            ui->labelErrorName->setPalette(pal);
-            ui->labelErrorName->setText("Name can't be empty");
+        QPalette pal = ui->labelErrorName->palette();
+        pal.setColor(QPalette::WindowText, Qt::red);
+        ui->labelErrorName->setPalette(pal);
+        ui->labelErrorName->setText("Name can't be empty");
     }
-    else if(arg1 != "")
+    else if (ui->lineComputerName->text() != "")
     {
-        ui->buttonOkCancel->setEnabled(true);
+        ui->labelErrorName->setText("");
     }
 }
