@@ -24,6 +24,8 @@ private slots:
 
     void on_lineYearOfBirth_textEdited(const QString &arg1);
 
+    void on_lineScientistName_returnPressed();
+
 private:
     Ui::AddScientist *ui;
     ScientistService sciServ;
