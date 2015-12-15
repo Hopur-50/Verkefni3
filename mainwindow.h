@@ -41,8 +41,6 @@ private slots:
 
     void on_deleteComputerButton_clicked();
 
-    void on_addRelationsButton_clicked();
-
     void displayAllScientists();
 
     void displayScientists(std::vector<Scientist> sci);
@@ -63,9 +61,10 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
+
     void on_buttonAddRelation_clicked();
 
-    void on_buttonAddRelation_2_clicked();
+    void on_buttonAddRelation2_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -238,12 +238,6 @@ void MainWindow::on_deleteComputerButton_clicked()
     displayAllComputers();
 }
 
-void MainWindow::on_addRelationsButton_clicked()
-{
-    AddRelation addRel;
-    addRel.exec();
-}
-
 void MainWindow::on_inputFilterScientists_textChanged()
 {
     string userInput = ui->inputFilterScientists->text().toStdString();
@@ -304,13 +298,15 @@ Scientist MainWindow::getScientist(int id)
     return displayedScientists[0]; //Should not reach this point.
 }
 
+
+
 void MainWindow::on_buttonAddRelation_clicked()
 {
     AddRelation addRel;
     addRel.exec();
 }
 
-void MainWindow::on_buttonAddRelation_2_clicked()
+void MainWindow::on_buttonAddRelation2_clicked()
 {
     AddRelation addRel;
     addRel.exec();

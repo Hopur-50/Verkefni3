@@ -867,7 +867,7 @@
          <bool>false</bool>
         </attribute>
        </widget>
-       <widget class="QPushButton" name="buttonAddRelation_2">
+       <widget class="QPushButton" name="buttonAddRelation2">
         <property name="geometry">
          <rect>
           <x>380</x>
