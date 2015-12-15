@@ -312,7 +312,7 @@ Scientist MainWindow::getScientist(int id)
     return displayedScientists[0]; //Should not reach this point. Just suppressing warning.
 }
 
-void MainWindow::on_buttonAddRelation_clicked()
+void MainWindow::on_buttonAddRelationSci_clicked()
 {
     int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();
@@ -324,7 +324,7 @@ void MainWindow::on_buttonAddRelation_clicked()
     refreshTables();
 }
 
-void MainWindow::on_buttonAddRelation2_clicked()
+void MainWindow::on_buttonAddRelationComp_clicked()
 {
     int compID = ui->tableComputer->item(selectedCompRow, 3)->text().toInt();
     int sciID = ui->tableScientist->item(selectedSciRow, 4)->text().toInt();

@@ -61,10 +61,9 @@ private slots:
 
     void on_tableComputer_clicked(const QModelIndex &index);
 
+    void on_buttonAddRelationSci_clicked();
 
-    void on_buttonAddRelation_clicked();
-
-    void on_buttonAddRelation2_clicked();
+    void on_buttonAddRelationComp_clicked();
 
     void on_tableRelatedScientists_clicked(const QModelIndex &index);
 
