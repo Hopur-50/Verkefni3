@@ -24,7 +24,7 @@ void AddScientist::on_buttonOkCancel_accepted()
 
     if (ui->lineScientistName->text() == "" || ui->lineScientistName->text() == " ")
     {
-            QValidator::Invalid;  //Eigum við að hafa eitthvað villu message? hvað finnst ykkur? Kv. Sandra
+            QValidator::Invalid;
     }
     else
     {
@@ -63,6 +63,11 @@ void AddScientist::on_lineYearOfBirth_textEdited(const QString &arg1)
             pal.setColor(QPalette::WindowText, Qt::red);
             ui->labelErrorYearOfBirthSci->setPalette(pal);
             ui->labelErrorYearOfBirthSci->setText("Scientist has to be born");
+
+            if(ui->lineYearOfBirth->text() == "")
+            {
+                ui->labelErrorYearOfBirthSci->text();
+            }
     }
     else if(ui->lineYearOfBirth->text() == "" || ui->lineYearOfBirth->text() == " ")
     {
